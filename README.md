@@ -6,7 +6,7 @@ In this project the farmers can sell their products online and the buyer can it 
 The Payments will be received from the consumers once the product is delivered to the consumer.
 The article and blogs section helps farmers to improve their productivity and profitability. Administrator can view and print all kinds of reports.
 
-Language(s) to be used are : 
+Language(s) to be used are: 
 • Design and Interface: HTML ,CSS,Bootstrap 
 • Programming language: PHP 
 • Scripting language: Javascript 
