@@ -8,6 +8,6 @@ The article and blogs section helps farmers to improve their productivity and pr
 
 Language(s) to be used are: 
 • Design and Interface: HTML ,CSS,Bootstrap 
-• Programming language: PHP 
+• Programming language: PHP
 • Scripting language: Javascript 
 • Database: MySQL Server, phpmyadmin.
