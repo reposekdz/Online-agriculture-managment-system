@@ -11,7 +11,7 @@ a {
 }
 
 a:hover {
-  color: #00cc95;
+  color:rgb(29, 4, 46);
   text-decoration: none;
 }
 
@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top i:hover {
-  background: #00805d;
+  background: #1a342d;
   color: #fff;
 }
 
@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .header-container {
-  background: #fff;
+  background: #7734aebd;
 }
 /*
 #header.header-scrolled {
@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 #header .logo {
  overflow: hidden;
   padding: 16px 30px 12px 30px;
-  background: #34d35e;
+  background: #45047a;
  
 }
 

@@ -83,7 +83,7 @@ if(isset($_POST['submit']))
       <div class="container">
         <div class="row">
         
-				<div class="col-sm-5" style=" margin-left: 200px;padding:  -20px 0px">
+				<div class="col-sm-5" style=" margin-left: 400px;padding:  -20px 0px">
     	            <img src="images/chandan.jpg" style="border-radius: 50%;width:250px;height:250px;margin-top: 5px;">
         	        <h3>Reponse NIYONKURU</h3>
             	    <p class="title" style="margin-top:-10px;">Student, to GARDEN TSS</p>
@@ -101,12 +101,10 @@ if(isset($_POST['submit']))
           <div class="info mt-4">
               <i class="icofont-google-map"></i>
               <h4>Location:</h4>
-              <p>SVIT,Rajanukunte<br>Bengaluru, Karnataka, India</p><br>
-<iframe src="https://www.google.co.in/maps/place/Sai+Vidya+Institute+of+Technology/@13.1683072,77.5560575,17z/data=!4m12!1m6!3m5!1s0x3bae21e08de3c30f:0x5570d051db765863!2sSai+Vidya+Institute+of+Technology!8m2!3d13.1683072!4d77.5582462!3m4!1s0x3bae21e08de3c30f:0x5570d051db765863!8m2!3d13.1683072!4d77.5582462"
-   
-  width="100%" height="350" frameborder="3" style="border:2;" aria-hidden="false"></iframe>
+              <p>Kirehe<br>kigali Rwanda</p><br>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.3265878842294!2d30.63901440811631!3d-2.263150151604179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c4c5f993be82e1%3A0x9ec0d01e0d996a6b!2sNyamugari%20parish!5e0!3m2!1sen!2srw!4v1747136524428!5m2!1sen!2srw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <!--
+            
             <form action="" method="post" role="form" class="mt-4">
               <div class="form-row">
                 <div class="col-md-4 form-group">
