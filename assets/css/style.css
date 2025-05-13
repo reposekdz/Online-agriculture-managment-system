@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top i:hover {
-  background: #1a342d;
+  background: #293431;
   color: #fff;
 }
 
@@ -68,19 +68,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .header-container {
-  background: #7734aebd;
+  background: #fff;
 }
-/*
+
 #header.header-scrolled {
   background: #fff;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   top: 0;
 }
-*/
+
 #header .logo {
  overflow: hidden;
   padding: 16px 30px 12px 30px;
-  background: #45047a;
+  background: #34d35e;
  
 }
 
@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #0d0c0f;
   text-decoration: none;
 }
-
+/*
 .nav-menu .get-started a {
   background: #5b43c7;
   color: #fff;
@@ -143,9 +143,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 15px;
   padding: 10px 25px;
 }
-
+*/
 .nav-menu .get-started a:hover {
-  background: #57077f;
+  background: #00805d;
   color: #fff;
 }
 
@@ -295,7 +295,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav .get-started a:hover {
-  background: #bc00c2;
+  background: #00c28e;
   color: #fff;
 }
 
@@ -409,8 +409,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-get-started:hover {
-  background: #5a146de9;
-  border: 2px solid #ce4fbd;
+  background: #3fb65b;
+  border: 2px solid #4fce86;
 }
 
 @media (min-width: 1024px) {
