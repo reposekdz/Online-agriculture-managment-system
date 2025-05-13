@@ -20,9 +20,9 @@
   --gray-dark: #343a40;
   --primary: #007bff;
   --secondary: #6c757d;
-  --success: #28a745;
+  --success: #002609;
   --info: #17a2b8;
-  --warning: #ffc107;
+  --warning: #d4a414;
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
@@ -194,6 +194,7 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  border-radius: 17px;
 }
 
 svg {
@@ -481,7 +482,7 @@ mark,
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
+  border-radius: 17px;
   max-width: 100%;
   height: auto;
 }
