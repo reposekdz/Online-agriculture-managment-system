@@ -235,7 +235,7 @@ echo "<option value='$rssql2[state_id]'>$rssql2[state]</option>";
 	  <select name="paymenttype" id="paymenttype" onChange="funpaymenttype(this.value)" autofocus class="form-control">
         <option value="">Select</option>
         <?php
-			$arr =array("Card Payment","Cash on delivery");
+			$arr =array("Card Payment","mobile money,airtel money");
 			foreach($arr as $val)
 			{
 				echo "<option value='$val'>$val</option>";
