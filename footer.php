@@ -7,12 +7,12 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3><strong>OAMS</strong></h3>
+            <h3><strong>TMMZ</strong></h3>
             <p>
-              SVIT,Bengaluru <br>
-              Karnataka, India <br><br>
-              <strong>Phone:</strong> <br>+91-7259956267 / +91-8792055020<br>
-              <strong>Email:</strong><br>chanduchandan2019@gmail.com<br>varunvar0704@gmail.com<br>
+             Kirehe<br>
+              Kigali, Rwanda <br><br>
+              <strong>Phone:</strong> <br>+250-722725735 / +250-784484638<br>
+              <strong>Email:</strong><br>reponsekdz06@gmail.com<br>
             </p>
           </div>
 <div class="col-lg-4 col-md-6 footer-newsletter">
@@ -24,10 +24,10 @@
 
       <div class="mr-md-auto text-center text-md-left">
         <div class="copyright">
-          &copy; Copyrights<strong><span> - OAMS.</span></strong>
+          &copy; Copyrights<strong><span> - TMMZ.</span></strong>
         </div>
         <div class="credits">
-          Designed by Chandan.M & Varun.G
+          Designed by Reponse NIYONKURU
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">

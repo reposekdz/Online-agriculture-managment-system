@@ -15,6 +15,10 @@ else
 ?> 
 >
 <option value="">Select</option>
+<option value="kigali">kigali</option>
+<option value="musanze">musanze</option>
+<option value="rubavu">rubavu</option>
+<option value="ngoma">ngoma</option>
 <?php
 $sql3 = "SELECT * FROM city where status='Active' ";
 if(isset($_GET['id']))

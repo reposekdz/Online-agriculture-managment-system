@@ -5,7 +5,7 @@ include("header.php");
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-      <h1>OAMS - Change The Way You Trade...</h1>
+      <h1>Terimbere Muhunzi</h1>
       <h2>Agriculture Management System is to help farmers by providing all kinds agriculture related information in the website...</h2>
       <a href="customerreglogin.php" class="btn-get-started scrollto">Get Started</a>
     </div>
@@ -63,9 +63,9 @@ include("header.php");
             <p class="font-italic"><b>Vision :</b> To provide a helping hand to the farmers and farm labourers in improving their lives through the medium of technology, thereby, improving the Agricultural Sector in the Indian Economy.
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> "OAMS" is a model Agriculture/Farm management website application..</li>
-              <li><i class="ri-check-double-line"></i> "OAMS" provides a concept of virtual agricultural trade to its users.</li>
-              <li><i class="ri-check-double-line"></i> "OAMS" helps the wholesalers and retailers in buying produce from larger number of farmers.</li>
+              <li><i class="ri-check-double-line"></i> "TMMZ" is a model Agriculture/Farm management website application..</li>
+              <li><i class="ri-check-double-line"></i> "TMMZ" provides a concept of virtual agricultural trade to its users.</li>
+              <li><i class="ri-check-double-line"></i> "TMMZ" helps the wholesalers and retailers in buying produce from larger number of farmers.</li>
             </ul>
           </div>
         </div>
