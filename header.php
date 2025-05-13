@@ -12,7 +12,7 @@ include("dbconnection.php");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>OAMS - Agriculture Management System</title>
+  <title>Terimbere Muhinzi</title>
   <meta content="" name="Agriculture Management System is to help farmers by providing all kinds agriculture related information in the website.">
   <meta content="Online Agriculture Management System, OAMS" name="keywords">
 
@@ -39,7 +39,7 @@ include("dbconnection.php");
     <div class="container">
       <div class="header-container d-flex align-items-center">
         <div class="logo mr-auto">
-          <h1 class="text-light"><a href="index.php"><span>OAMS</span></a></h1>
+          <h1 class="text-light"><a href="index.php"><span>TMMZ</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
