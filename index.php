@@ -6,7 +6,7 @@ include("header.php");
   <section id="hero" class="d-flex align-items-center">
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
       <h1>Terimbere Muhinzi</h1>
-      <h2>Gahunda yo gucunga ubuhinzi igamije gufasha abahinzi batanga amakuru yose ajyanye n'ubuhinzi,kugurisha imyakayabo n'ibindi ku rubuga...</h2>
+      <h2>Gahunda yo gucunga ubuhinzi igamije gufasha abahinzi, batanga amakuru yose ajyanye n'ubuhinzi,kugurisha imyakayabo n'ibindi ku rubuga...</h2>
       <a href="customerreglogin.php" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
@@ -58,14 +58,14 @@ include("header.php");
 <img src="images/pja1.jpg" style="width: 100%;">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
-            <p class="font-italic"><b>Mission :</b> To provide technology and services to farmers, merchants, and farm labourers to help them expand their business and provide them with a wider market. And to improve the present farming processes and to provide knowledge about recent agricultural issues.
+            <p class="font-italic"><b>Inshingano:</b>Gutanga ikoranabuhanga na serivisi ku bahinzi, abacuruzi n'abakozi bo mu mirima kugira ngo bibafashe kwagura ubucuruzi bwabo no kubaha isoko ryagutse. Kandi kugira ngo habeho kunoza imikorere y'ubuhinzi bw'ubuhinzi no gutanga ubumenyi ku bibazo by'ubuhinzi biherutse kuba.
             </p>
-            <p class="font-italic"><b>Vision :</b> To provide a helping hand to the farmers and farm labourers in improving their lives through the medium of technology, thereby, improving the Agricultural Sector in the Indian Economy.
+            <p class="font-italic"><b>Icyerekezo:</b> Gufasha abahinzi n'abakozi bo mu mirima mu kuzamura imibereho yabo hifashishijwe ikoranabuhanga, bityo, guteza imbere urwego rw'ubuhinzi mu bukungu bw'igihugu cyu Rwanda.
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> "TMMZ" is a model Agriculture/Farm management website application..</li>
-              <li><i class="ri-check-double-line"></i> "TMMZ" provides a concept of virtual agricultural trade to its users.</li>
-              <li><i class="ri-check-double-line"></i> "TMMZ" helps the wholesalers and retailers in buying produce from larger number of farmers.</li>
+              <li><i class="ri-check-double-line"></i>"TMMZ" ni icyitegererezo cy'urubuga rw'ubuhinzi / imicungire y'ubuhinzi..</li>
+              <li><i class="ri-check-double-line"></i> "TMMZ" itanga igishushanyo mbonera cy'ubucuruzi bw'ubuhinzi ku bayikoresha.</li>
+              <li><i class="ri-check-double-line"></i>"TMMZ" ifasha abacuruzi bacuruza n'abagurisha ku giti cyabo kugura ibikomoka ku bahinzi benshi.</li>
             </ul>
           </div>
         </div>
