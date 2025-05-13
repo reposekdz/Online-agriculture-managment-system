@@ -154,7 +154,7 @@ CREATE TABLE `city` (
 --
 
 INSERT INTO `city` (`city_id`, `country_id`, `state_id`, `city`, `description`, `status`) VALUES
-(1, 1, 11, 'Bangalore Urban', 'Bangalore is the capital of Indias southern Karnataka state. The center of Indias hightech industry, the city is also known for its green spaces and nightlife', 'Active'),
+(1, 1, 11, 'kirehe', 'Bangalore is the capital of Indias southern Karnataka state. The center of Indias hightech industry, the city is also known for its green spaces and nightlife', 'Active'),
 (2, 1, 11, 'Bangalore Rural', '', 'Active'),
 (3, 1, 11, 'Bagalokote', '', 'Active'),
 (4, 1, 11, 'Bellary', '', 'Active'),
