@@ -83,11 +83,10 @@ if(isset($_POST['submit']))
       <div class="container">
         <div class="row">
         
-				<div class="col-sm-5" style=" margin-left: 60px;padding:  -20px 0px">
+				<div class="col-sm-5" style=" margin-left: 200px;padding:  -20px 0px">
     	            <img src="images/chandan.jpg" style="border-radius: 50%;width:250px;height:250px;margin-top: 5px;">
-        	        <h3>Chandan.M</h3>
-            	    <p class="title" style="margin-top:-10px;">Student, 1VA20IS014</p>
-                	<p style="margin-top:-10px"><b>ISE<br>SVIT Bengaluru</b></p>
+        	        <h3>Reponse NIYONKURU</h3>
+            	    <p class="title" style="margin-top:-10px;">Student, to GARDEN TSS</p>
 	                <p style="font-size: 18px;margin-bottom: -5px;"> Contact Us </p>
 	                
                		<div>
@@ -96,23 +95,7 @@ if(isset($_POST['submit']))
         		        <a style="font-size: 40px;margin-right:10px;color: #0e76a8;" href="https://www.linkedin.com/in/chandan-m-701674213" class="linkedin cta-btn"><i class="bx bxl-linkedin"></i></a>
             		    <a style="font-size: 40px;" class="text-primary" href="https://instagram.com/chandan_aradhaya?igshid=YmMyMTA2M2Y=" class="instagram cta-btn"><i class="bx bxl-instagram"></i></a>
                   </div>
-                </div>
-
-
-				<div class="col-sm-5" style="padding: -20px 0px;margin-left:30px;">
-    	            <img src="images/varun.jpg" style="border-radius: 50%;width:250px;height:250px;margin-top: 5px;">
-        	        <h3>Varun.G</h3>
-            	    <p class="title" style="margin-top:-10px;">Student, 1VA20IS056</p>
-                	<p style="margin-top:-10px"><b>ISE<br>SVIT Bengaluru</b></p>
-	                <p style="font-size: 18px;margin-bottom: -5px;"> Contact Us </p>
-	                
-               		<div>
-               			<a style="font-size: 40px;margin-right:10px;"class="text-danger" href="mailto:varunvar0704@gmail.com" class="google-plus cta-btn"><i class="bx bxl-skype"></i></a>
-    		            <a style="font-size: 40px; margin-right:10px; color: #00acee;" href="https://twitter.com/Varun33772773?t=WOLFnspnbDb8U3MtPG7g1w&s=09" class="twitter cta-btn "><i class="bx bxl-twitter"></i></a>
-        		        <a style="font-size: 40px;margin-right:10px;color: #0e76a8;" href="https://www.linkedin.com/in/varun-g-79575122a" class="linkedin cta-btn"><i class="bx bxl-linkedin"></i></a>
-            		    <a style="font-size: 40px;" class="text-primary" href="https://instagram.com/chandan_aradhaya?igshid=YmMyMTA2M2Y=" class="instagram cta-btn"><i class="bx bxl-instagram"></i></a>
-                	</div>
-                </div>            
+                </div>         
            
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
           <div class="info mt-4">
