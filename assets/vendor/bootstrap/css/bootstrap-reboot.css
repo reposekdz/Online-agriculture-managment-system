@@ -164,6 +164,7 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  border-radius: 15px;
 }
 
 svg {
