@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #0d0c0f;
   text-decoration: none;
 }
-/*
+
 .nav-menu .get-started a {
   background: #5b43c7;
   color: #fff;
@@ -143,9 +143,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 15px;
   padding: 10px 25px;
 }
-*/
+
 .nav-menu .get-started a:hover {
-  background: #00805d;
+  background: #57077f;
   color: #fff;
 }
 
@@ -295,7 +295,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav .get-started a:hover {
-  background: #00c28e;
+  background: #bc00c2;
   color: #fff;
 }
 
@@ -409,8 +409,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-get-started:hover {
-  background: #3fb65b;
-  border: 2px solid #4fce86;
+  background: #5a146de9;
+  border: 2px solid #ce4fbd;
 }
 
 @media (min-width: 1024px) {
