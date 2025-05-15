@@ -65,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 997;
   transition: all 1s;
   top: 20px;
+  height: 150px;
 }
 
 #header .header-container {
@@ -135,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #0d0c0f;
   text-decoration: none;
 }
-/*
+
 .nav-menu .get-started a {
   background: #5b43c7;
   color: #fff;
@@ -143,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 15px;
   padding: 10px 25px;
 }
-*/
+
 .nav-menu .get-started a:hover {
   background: #00805d;
   color: #fff;
@@ -495,6 +496,7 @@ section {
   -webkit-filter: none;
   filter: none;
   transform: scale(1.1);
+  border-radius: 20px;
 }
 img{
   border-radius: 20px;
@@ -1302,14 +1304,15 @@ img{
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  color: #8d7285;
+  color: white;
   font-size: 14px;
-  background: #4b3068;
+  background:rgba(43, 12, 12, 0.887)
 }
 
 #footer .footer-top {
-  padding: 60px 0 30px 0;
-  background: #27012c;
+  padding: 30px 0 15px 0;
+  height: 250px;
+  background:rgb(46, 54, 77);
 }
 
 #footer .footer-top .footer-contact {
@@ -1321,7 +1324,7 @@ img{
   margin: 0 0 30px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 #footer .footer-top .footer-contact p {
@@ -1329,13 +1332,13 @@ img{
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
-  color: #777777;
+  color: white;
 }
 
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #444444;
+  color: white;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1352,7 +1355,7 @@ img{
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #290333;
+  color:white;
   font-size: 18px;
   line-height: 1;
 }
@@ -1368,7 +1371,7 @@ img{
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #777777;
+  color: white;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -1382,14 +1385,14 @@ img{
 #footer .footer-newsletter h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #444444;
+  color: white;
   position: relative;
   padding-bottom: 12px;
 }
 
 #footer .footer-newsletter form {
   margin-top: 30px;
-  background: #791251;
+  background:rgb(86, 82, 84);
   padding: 6px 10px;
   position: relative;
   border-radius: 50px;
@@ -1420,11 +1423,11 @@ img{
 }
 
 #footer .footer-newsletter form input[type="submit"]:hover {
-  background: #460242;
+  background:rgb(224, 215, 224);
 }
 
 #footer .credits {
   padding-top: 5px;
   font-size: 13px;
-  color: #444444;
+  color: white;
 }

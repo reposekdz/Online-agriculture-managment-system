@@ -20,7 +20,7 @@
             <p>This feature is Available only for Staff or Administrator</p>
             <button class="btn btn-success" type="submit" onclick="window.location='adminloginpanel.php';" style="background-color: #791251; border: none;">Click here to Login</button>
           </div></div></div></div>
-    <div class="container d-md-flex py-4">
+    <div class="container d-md-flex py-4" style="backgroung-color: green;">
 
       <div class="mr-md-auto text-center text-md-left">
         <div class="copyright">
