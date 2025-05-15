@@ -1298,9 +1298,9 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  color: #444444;
+  color: #8d7285;
   font-size: 14px;
-  background: #b09ac7;
+  background: #4b3068;
 }
 
 #footer .footer-top {
@@ -1385,7 +1385,7 @@ section {
 
 #footer .footer-newsletter form {
   margin-top: 30px;
-  background: #fff;
+  background: #791251;
   padding: 6px 10px;
   position: relative;
   border-radius: 50px;

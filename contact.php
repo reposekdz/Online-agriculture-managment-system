@@ -90,10 +90,10 @@ if(isset($_POST['submit']))
 	                <p style="font-size: 18px;margin-bottom: -5px;"> Contact Us </p>
 	                
                		<div>
-               			<a style="font-size: 40px; margin-right:10px;"class="text-danger" href="mailto:chanduchandan2019@gmail.com" class="google-plus cta-btn"><i class="bx bxl-skype"></i></a>
-    		            <a style="font-size: 40px; margin-right:10px; color: #00acee;" href="https://twitter.com/Varun33772773?t=WOLFnspnbDb8U3MtPG7g1w&s=09" class="twitter cta-btn "><i class="bx bxl-twitter"></i></a>
-        		        <a style="font-size: 40px;margin-right:10px;color: #0e76a8;" href="https://www.linkedin.com/in/chandan-m-701674213" class="linkedin cta-btn"><i class="bx bxl-linkedin"></i></a>
-            		    <a style="font-size: 40px;" class="text-primary" href="https://instagram.com/chandan_aradhaya?igshid=YmMyMTA2M2Y=" class="instagram cta-btn"><i class="bx bxl-instagram"></i></a>
+               			<a style="font-size: 40px; margin-right:10px;"class="text-danger" href="mailto:reponsekdz06@gmail.com" class="google-plus cta-btn"><i class="bx bxl-skype"></i></a>
+    		            <a style="font-size: 40px; margin-right:10px; color: #00acee;" href="https://x.com/reponse_kdz" class="twitter cta-btn "><i class="bx bxl-twitter"></i></a>
+        		        <a style="font-size: 40px;margin-right:10px;color: #0e76a8;" href="https://www.linkedin.com/in/reponse-kdz-95889a365/" class="linkedin cta-btn"><i class="bx bxl-linkedin"></i></a>
+            		    <a style="font-size: 40px;" class="text-primary" href="https://www.instagram.com/reponse_kdz/?next=%2F=" class="instagram cta-btn"><i class="bx bxl-instagram"></i></a>
                   </div>
                 </div>         
            
