@@ -18,7 +18,7 @@
 <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Admin or Staff Login</h4>
             <p>This feature is Available only for Staff or Administrator</p>
-            <button class="btn btn-success" type="submit" onclick="window.location='adminloginpanel.php';">Click here to Login</button>
+            <button class="btn btn-success" type="submit" onclick="window.location='adminloginpanel.php';" style="background-color: #791251; border: none;">Click here to Login</button>
           </div></div></div></div>
     <div class="container d-md-flex py-4">
 
