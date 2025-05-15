@@ -15,6 +15,7 @@ include("dbconnection.php");
   <title>Terimbere Muhinzi</title>
   <meta content="" name="Agriculture Management System is to help farmers by providing all kinds agriculture related information in the website.">
   <meta content="Online Agriculture Management System, OAMS" name="keywords">
+  <link rel="icon" href="imgarticle/botany.png" type="image/png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
