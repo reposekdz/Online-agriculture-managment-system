@@ -23,23 +23,193 @@ self.location='cal2.php?month=' + month_val + '&year=' + year_val ; // reload th
 }
 </script>
 <style type="text/css">
-table.main {
-  width: 100%; 
-border: 1px solid black;
-	background-color: #9dffff;
-}
-table.main td {
+/* ===== CSS Custom Properties (Theme Variables) ===== */
+:root {
+  --table-bg-color: #ffffff;
+  --table-border-color: #e0e0e0; /* Lighter border */
+  --table-shadow-color: rgba(0, 0, 0, 0.08);
+  --table-hover-shadow-color: rgba(0, 0, 0, 0.15);
 
-font-family: verdana,arial, helvetica,  sans-serif;
-font-size: 11px;
+  --header-bg-color: #f8f9fa; /* Very light grey for a clean header */
+  --header-text-color: #343a40; /* Dark grey text for header */
+  --header-border-color: #dee2e6;
+  --header-hover-bg-color: #e9ecef;
+  --header-active-bg-color: #dee2e6; /* For potential sort indication */
+
+  --row-text-color: #495057;
+  --row-bg-color: #ffffff;
+  --row-hover-bg-color: #f1f3f5; /* Subtle hover for rows */
+  --row-striped-bg-color: #fbfcfd; /* Very subtle striping */
+  --row-border-color: #ebebeb;
+
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
+  --link-active-color: #004085;
+
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --border-radius-main: 8px; /* Rounded corners */
+  --transition-speed-fast: 0.15s;
+  --transition-speed-normal: 0.25s;
 }
+
+/* ===== Main Table Styling ===== */
+table.main {
+  width: 100%;
+  border-collapse: separate; /* Use separate for border-radius to work on table */
+  border-spacing: 0; /* Remove spacing between cells when using separate */
+  background-color: var(--table-bg-color);
+  border-radius: var(--border-radius-main);
+  box-shadow: 0 4px 12px var(--table-shadow-color);
+  transition: box-shadow var(--transition-speed-normal) ease-in-out, transform var(--transition-speed-normal) ease-in-out;
+  overflow: hidden; /* Ensures child elements also respect the border-radius */
+  /* Adding a slight perspective for subtle 3D effects on row hover if desired later */
+  /* perspective: 1000px; */
+}
+
+table.main:hover {
+  box-shadow: 0 8px 20px var(--table-hover-shadow-color);
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* ===== Table Header Styling ===== */
 table.main th {
-	border-width: 1px 1px 1px 1px;
-	padding: 0px 0px 0px 0px;
- background-color: #ccb4cd;
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  border-bottom: 2px solid var(--header-border-color); /* Stronger bottom border for header */
+  padding: 16px 20px; /* More generous padding */
+  text-align: left;
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 600; /* Semi-bold for emphasis */
+  text-transform: capitalize; /* Capitalize instead of uppercase for a softer look */
+  letter-spacing: 0.3px;
+  position: sticky; /* Sticky header */
+  top: 0; /* Required for sticky */
+  z-index: 10; /* Ensure header stays above scrolling content */
+  transition: background-color var(--transition-speed-fast) ease;
 }
-table.main a{TEXT-DECORATION: none;}
-table,td{ border: 1px solid #ffffff }
+
+table.main th:hover {
+  background-color: var(--header-hover-bg-color);
+}
+
+/* Style for sortable header indication (add class .sortable to th) */
+table.main th.sortable {
+  cursor: pointer;
+}
+
+table.main th.sortable::after {
+  content: '\\2195'; /* Up-down arrow */
+  font-size: 0.8em;
+  opacity: 0.4;
+  margin-left: 8px;
+  transition: opacity var(--transition-speed-fast) ease;
+}
+
+table.main th.sortable:hover::after {
+  opacity: 0.8;
+}
+
+table.main th.sortable.asc::after {
+  content: '\\2191'; /* Up arrow */
+  opacity: 1;
+}
+
+table.main th.sortable.desc::after {
+  content: '\\2193'; /* Down arrow */
+  opacity: 1;
+}
+
+
+/* ===== Table Row Styling ===== */
+table.main tr {
+  transition: background-color var(--transition-speed-fast) ease-in-out, transform var(--transition-speed-fast) ease-in-out;
+  border-bottom: 1px solid var(--row-border-color); /* Separator lines for rows */
+}
+
+table.main tr:last-child {
+  border-bottom: none; /* Remove border from the last row */
+}
+
+table.main tr:hover {
+  background-color: var(--row-hover-bg-color);
+  /* transform: scale(1.01); */ /* Optional: slight scale on row hover */
+}
+
+/* Subtle row striping */
+table.main tr:nth-child(even) {
+  background-color: var(--row-striped-bg-color);
+}
+table.main tr:nth-child(even):hover {
+  background-color: var(--row-hover-bg-color); /* Ensure hover overrides stripe */
+}
+
+
+/* ===== Table Data Cell Styling ===== */
+table.main td {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  color: var(--row-text-color);
+  padding: 14px 20px; /* Consistent padding with header */
+  vertical-align: middle; /* Align cell content vertically */
+  transition: color var(--transition-speed-fast) ease, background-color var(--transition-speed-fast) ease;
+}
+
+/* Example: Highlighting a cell on row hover if you want more specific interaction */
+/* table.main tr:hover td:first-child {
+  font-weight: 500;
+  color: var(--link-hover-color);
+} */
+
+/* ===== Link Styling in Table ===== */
+table.main a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative; /* For pseudo-element underline animation */
+  transition: color var(--transition-speed-fast) ease-in-out;
+}
+
+table.main a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1.5px; /* Thickness of the underline */
+  bottom: -2px; /* Position below the text */
+  left: 0;
+  background-color: var(--link-hover-color);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all var(--transition-speed-normal) ease-in-out;
+}
+
+table.main a:hover,
+table.main a:focus { /* Consistent focus style */
+  color: var(--link-hover-color);
+  outline: none; /* Remove default outline if custom focus is handled */
+}
+
+table.main a:hover::after,
+table.main a:focus::after {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+table.main a:active {
+  color: var(--link-active-color);
+}
+table.main a:active::after {
+  background-color: var(--link-active-color);
+}
+
+/* ===== Focus visible for keyboard navigation ===== */
+table.main *:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25); /* Subtle glow */
+}
 </style>
 </head>
 <body>
