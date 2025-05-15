@@ -38,7 +38,7 @@ $rs3 = mysqli_fetch_array($qsql3);
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
             <div class="info mt-4">
               <div class="logo mr-auto">
-          <center><h1 class="text-light"><a href="index.php"><span>OAMS</span></a></h1></center>
+          <center><h1 class="text-light"><a href="index.php"><span>TMMZ</span></a></h1></center>
 		  
         </div>
             </div>
