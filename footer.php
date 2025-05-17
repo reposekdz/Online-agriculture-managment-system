@@ -1,7 +1,7 @@
   <!-- ======= Footer ======= -->
   <section id="counts" class="counts">
     <div class="container"></div></section>
-  <footer id="footer">
+  <footer id="footer" class="footer">
 <div class="footer-top">
       <div class="container">
         <div class="row">
@@ -27,13 +27,13 @@
       <div class="mr-md-auto text-center text-md-left">
         <div class="copyright">
           &copy; Copyrights<strong><span> - TMMZ.</span></strong>
-        </div>
-      </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        </div><br><br>
+        <div class="social-links text-center text-md-right pt-3 pt-md-0" style="margin-left: 400px;">
         <a href="contact.php" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="contact.php" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="contact.php" class="google-plus"><i class="bx bxl-skype"></i></a>
         <a href="contact.php" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
       </div>
     </div>
   </footer><!-- End Footer -->
