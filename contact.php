@@ -9,11 +9,7 @@ if(isset($_POST['submit']))
 	<title>OAMS Contact Us form</title>
 	</head>
 	<body>
-<<<<<<< HEAD
-	<p>OAMS Contact Us form</p>
-=======
 	<p>TMMZ Contact Us form</p>
->>>>>>> recovered-work
 	<table>
 	<tr>
 	<th>Name</th>
@@ -136,7 +132,6 @@ if(isset($_POST['submit']))
             </form>
           </div>
         </div>
--->
       </div>
     </section><!-- End Contact Section -->
 
