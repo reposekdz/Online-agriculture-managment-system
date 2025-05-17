@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #444444;
+  color: #151212;
 }
 
 a {
@@ -497,6 +497,7 @@ section {
   filter: none;
   transform: scale(1.1);
   border-radius: 20px;
+  
 }
 img{
   border-radius: 20px;
@@ -1247,7 +1248,7 @@ img{
 }
 
 .portfolio-details .portfolio-details-carousel .owl-dot.active {
-  background-color: #5b43c7 !important;
+  background-color: rgb(46, 54, 77) !important;
 }
 
 .portfolio-details .portfolio-info {
@@ -1306,7 +1307,7 @@ img{
 #footer {
   color: white;
   font-size: 14px;
-  background:rgba(43, 12, 12, 0.887)
+  background:rgb(46, 54, 77);
 }
 
 #footer .footer-top {
@@ -1379,7 +1380,7 @@ img{
 
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
-  color: #5b43c7;
+  color: rgb(46, 54, 77);
 }
 
 #footer .footer-newsletter h4 {
