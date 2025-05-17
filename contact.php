@@ -6,7 +6,7 @@ if(isset($_POST['submit']))
 	$subject = "Message from OAMS";		
 	$message = "<html>
 	<head>
-	<title>OAMS Contact Us form</title>
+	<title>TMMZ Contact Us form</title>
 	</head>
 	<body>
 	<p>TMMZ Contact Us form</p>
