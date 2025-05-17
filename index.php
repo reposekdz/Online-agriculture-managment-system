@@ -60,7 +60,7 @@ include("header.php");
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
             <p class="font-italic"><b>Inshingano:</b>Gutanga ikoranabuhanga na serivisi ku bahinzi, abacuruzi n'abakozi bo mu mirima kugira ngo bibafashe kwagura ubucuruzi bwabo no kubaka isoko ryagutse. Kandi kugira ngo habeho kunoza imikorere y'ubuhinzi bw'ubuhinzi no gutanga ubumenyi ku bibazo by'ubuhinzi biherutse kuba.
             </p>
-            <p class="font-italic"><b>Icyerekezo:</b> Gufasha abahinzi n'abakozi bo mu mirima mu kuzamura imibereho yabo hifashishijwe ikoranabuhanga, bityo, guteza imbere urwego rw'ubuhinzi mu bukungu bw'igihugu cyu Rwanda.
+            <p class="font-italic"><b>Icyerekezo:</b> Gufasha abahinzi n'abakozi bo mu mirima mu kuzamura imibereho yabo hifashishijwe ikoranabuhanga, bityo, bigateza imbere urwego rw'ubuhinzi mu bukungu bw'igihugu cyu Rwanda.
             </p>
             <ul>
               <li><i class="ri-check-double-line"></i>"TMMZ" ni icyitegererezo cy'urubuga rw'ubuhinzi / imicungire y'ubuhinzi..</li>
