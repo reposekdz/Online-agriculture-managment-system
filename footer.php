@@ -11,8 +11,10 @@
             <p>
              Kirehe<br>
               Kigali, Rwanda <br><br>
+              <div class="all" id="alls">
               <strong>Phone:</strong> <br>+250-722725735 / +250-784484638<br>
               <strong>Email:</strong><br>reponsekdz06@gmail.com<br>
+              </div>
             </p>
           </div>
 <div class="col-lg-4 col-md-6 footer-newsletter">
@@ -25,9 +27,6 @@
       <div class="mr-md-auto text-center text-md-left">
         <div class="copyright">
           &copy; Copyrights<strong><span> - TMMZ.</span></strong>
-        </div>
-        <div class="credits">
-          Designed by Reponse NIYONKURU
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
