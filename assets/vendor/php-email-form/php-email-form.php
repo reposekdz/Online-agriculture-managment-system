@@ -19,32 +19,32 @@ class PHP_Email_Form {
    * Recipient email address.
    * @var string
    */
-  public $to = '';
+  public $to = 'reponsekdz06@gmail.com';
 
   /**
    * Sender's name.
    * @var string
    */
-  public $from_name = '';
+  public $from_name = 'reponsekdz06@gmail.com';
 
   /**
    * Sender's email address.
    * @var string
    */
-  public $from_email = '';
+  public $from_email = 'reponsekdz06@gmail.com';
 
   /**
    * Email subject.
    * @var string
    */
-  public $subject = '';
+  public $subject = 'reponsekdz06@gmail.com';
 
   /**
    * Array of message lines or parts.
    * Each element is an array: ['content' => '...', 'label' => '...', 'min_chars' => ..., 'is_html' => ...]
    * @var array
    */
-  private $messages = [];
+  private $messages = ['reponsekdz06@gmail.com'];
 
   /**
    * Whether the request is AJAX. If true, script will output 'OK' or error message.
