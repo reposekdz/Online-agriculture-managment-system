@@ -2,7 +2,7 @@
 if(!isset($_SESSION)) { session_start(); }
 error_reporting(E_ALL & ~E_NOTICE  &  ~E_STRICT  &  ~E_WARNING);
 $dt = date("Y-m-d");
-$rupeesymbol= "₹";
+$rupeesymbol= "RWF";
 include("dbconnection.php");
 ?> 
 <!DOCTYPE html>
