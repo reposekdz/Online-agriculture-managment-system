@@ -37,7 +37,7 @@ if(isset($_POST['submit']))
 	echo "<script>alert('Thank You For Dropping A Mail!! We will Get Back To You Soon..');</script>";
 	//sendemailmsg($to,$subject,$message);
 	include("phpmailer.php");
-	//sendmail($to, "OAMS" , $subject, $message);
+	//sendmail($to, "TMMZ" , $subject, $message);
 	echo "<script>window.location='contact.php';</script>";
 }
 ?>
