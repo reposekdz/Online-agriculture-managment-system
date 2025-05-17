@@ -1,4 +1,4 @@
-# OAMS an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
+# TMMZ an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
 This website helps farmers/sellers by providing them a large market online to sell their products.
 They can also hire farm labourers and be updated with the recent agricultural developments.
 Farmers can shop for farming equipments easily. The consumers can also buy fresh products directly from the farmers.
