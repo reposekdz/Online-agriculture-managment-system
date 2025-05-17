@@ -1,17 +1,4 @@
 <?php
-/**
- * PHP Email Form (Alternative Example)
- *
- * Please note that this is an illustrative example and may not include all the
- * advanced features or the exact internal structure of the commercial BootstrapMade
- * library (like advanced spam protection, file attachments out-of-the-box
- * without further coding, or direct SMTP integration without external libraries).
- *
- * For advanced features like robust SMTP, file attachments, and advanced
- * spam protection, consider using dedicated libraries like PHPMailer or
- * Symfony Mailer, or purchasing the pro version of templates that include
- * the original library.
- */
 
 class PHP_Email_Form {
 
