@@ -2,7 +2,7 @@
 include("header.php");
 if(isset($_POST['submit']))
 {
-	$to = "mailto:chanduchandan2019@gmail.com";
+	$to = "mailto:reponsekdz06@gmail.com";
 	$subject = "Message from OAMS";		
 	$message = "<html>
 	<head>
