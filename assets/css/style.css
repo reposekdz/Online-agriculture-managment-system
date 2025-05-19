@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   margin-left: -100px; /* Increased from -10px */
-  margin-right: 20px; /* Added to match left margin increase */
+  margin-right: 30px; /* Added to match left margin increase */
   margin-top: -20px;
   width: calc(100% + 200px); /* Increased width to account for margin changes */
 }
@@ -130,16 +130,21 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   height: 80px;
 }
+.logo mr-auto{
+  background: linear-gradient(135deg, #5e0493, #4c0447);
+  
+}
 
 #header .logo {
   overflow: hidden;
   padding: 20px 30px;
-  background: linear-gradient(135deg, #34d35e, #2bc253);
+  background: linear-gradient(135deg, #5e0493, #4c0447);
   border-radius: 8px;
   margin-right: 40px;
   display: flex;
   align-items: center;
   position: relative;
+  height: 70px;
   z-index: 1;
   cursor: pointer;
   margin-left: -40px;
@@ -151,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo:hover {
-  background: linear-gradient(135deg, #2bc253, #1fb346);
+  background: linear-gradient(135deg, #022d0a, #02300e);
   transform: perspective(500px) rotateX(5deg);
   box-shadow: 
     0 8px 15px rgba(0, 0, 0, 0.2),
@@ -241,7 +246,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #36343a;
   padding: 10px 15px;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 5000;
   text-transform: uppercase;
   font-family: sans-serif;
   text-decoration: none;
