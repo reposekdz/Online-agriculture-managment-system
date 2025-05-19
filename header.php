@@ -31,7 +31,7 @@ include("dbconnection.php");
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" xintegrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="assets/css/custom-header.css" rel="stylesheet"> <link href="assets/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -50,15 +50,15 @@ include("dbconnection.php");
                             {
                               echo ' active ';
                             }
-                            ?>"><a href="index.php"><i class="fas fa-home"></i> Home</a></li> <li class="drop-down"><a href="#"><i class="fas fa-newspaper"></i> Articles</a> <ul>
-			<li><a href="displayarticles.php?articletype=Blog"><i class="fas fa-blog"></i> Blogs</a></li> <li><a href="displaynews.php?articletype=News"><i class="fas fa-bullhorn"></i> News</a></li> </ul>
+                            ?>"><a href="index.php" data-key="nav_home"><i class="fas fa-home"></i> Home</a></li> <li class="drop-down"><a href="#" data-key="nav_articles"><i class="fas fa-newspaper"></i> Articles</a> <ul>
+			<li><a href="displayarticles.php?articletype=Blog" data-key="nav_blogs"><i class="fas fa-blog"></i> Blogs</a></li> <li><a href="displaynews.php?articletype=News" data-key="nav_news"><i class="fas fa-bullhorn"></i> News</a></li> </ul>
 	</li>
    <li class="drop-down <?php
                             if(basename($_SERVER['PHP_SELF']) == "displayproducts.php" )
                             {
                               echo ' active ';
                             }
-                            ?>"><a href="displayproducts.php" onclick='window.location=`displayproducts.php`' ><i class="fas fa-store"></i> Farmer's Market</a> <ul>
+                            ?>"><a href="displayproducts.php" onclick='window.location=`displayproducts.php`' data-key="nav_farmers_market"><i class="fas fa-store"></i> Farmer's Market</a> <ul>
 <?php
 $sqlcategoryfk = "SELECT * FROM category where status='Active' AND category_type='SellingProduct'";
 $qsqlcategoryfk =mysqli_query($con,$sqlcategoryfk);
@@ -75,7 +75,7 @@ echo "<li><a href='displayproducts.php?category_id=$rscategoryfk[category_id]&ca
                             {
                               echo ' active ';
                             }
-                            ?>"><a href="displaysales.php" onclick='window.location=`displaysales.php`'><i class="fas fa-tractor"></i> Farmer's Kit</a> <ul>
+                            ?>"><a href="displaysales.php" onclick='window.location=`displaysales.php`' data-key="nav_farmers_kit"><i class="fas fa-tractor"></i> Farmer's Kit</a> <ul>
 <?php
 $sqlcategoryfm = "SELECT * FROM category where status='Active' AND category_type='Produce'";
 $qsqlcategoryfm =mysqli_query($con,$sqlcategoryfm);
@@ -88,7 +88,7 @@ echo "<li><a href='displaysales.php?category_id=$rscategoryfm[category_id]&categ
               </ul>
             </li>
 
-            <li><a href="displayworkers.php"><i class="fas fa-hard-hat"></i> Hire</a></li> <?php
+            <li><a href="displayworkers.php" data-key="nav_hire"><i class="fas fa-hard-hat"></i> Hire</a></li> <?php
 if(isset($_SESSION['customerid']))
 {
 ?>
@@ -97,8 +97,8 @@ if(isset($_SESSION['customerid']))
                             {
                               echo ' active ';
                             }
-                            ?>" ><a href=""><i class="fas fa-user-circle"></i> My Account</a> <ul>
-	<li><a href="customerpanel.php"><i class="fas fa-user"></i> Customer Panel</a></li> <li><a href="viewcstpurchasereport.php"><i class="fas fa-file-invoice-dollar"></i> Farmer's Market - Purchase Report</a></li>	<li><a href="viewpurchaserequest.php"><i class="fas fa-shopping-basket"></i> Farmer's Kit - View Purchase request</a></li> <li><a href="viewcstpurchaseorder.php"><i class="fas fa-clipboard-list"></i> Farmer's Kit - View Purchase Order</a></li> <li><a href="viewpurchasereport.php"><i class="fas fa-receipt"></i> Farmer's Kit - View Billing Report</a></li> <li><a href="customerUpdate.php"><i class="fas fa-edit"></i> Update Profile</a></li> <li><a href="Customerchngpassword.php"><i class="fas fa-key"></i> Change Password</a></li> <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li> </ul>
+                            ?>" ><a href="" data-key="nav_my_account"><i class="fas fa-user-circle"></i> My Account</a> <ul>
+	<li><a href="customerpanel.php" data-key="nav_customer_panel"><i class="fas fa-user"></i> Customer Panel</a></li> <li><a href="viewcstpurchasereport.php" data-key="nav_fm_purchase_report"><i class="fas fa-file-invoice-dollar"></i> Farmer's Market - Purchase Report</a></li>	<li><a href="viewpurchaserequest.php" data-key="nav_fk_view_pr"><i class="fas fa-shopping-basket"></i> Farmer's Kit - View Purchase request</a></li> <li><a href="viewcstpurchaseorder.php" data-key="nav_fk_view_po"><i class="fas fa-clipboard-list"></i> Farmer's Kit - View Purchase Order</a></li> <li><a href="viewpurchasereport.php" data-key="nav_fk_view_billing"><i class="fas fa-receipt"></i> Farmer's Kit - View Billing Report</a></li> <li><a href="customerUpdate.php" data-key="nav_update_profile"><i class="fas fa-edit"></i> Update Profile</a></li> <li><a href="Customerchngpassword.php" data-key="nav_change_password"><i class="fas fa-key"></i> Change Password</a></li> <li><a href="logout.php" data-key="nav_logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li> </ul>
 </li>
 <?php
 }
@@ -110,36 +110,36 @@ else if(isset($_SESSION['sellerid']))
                             {
                               echo ' active ';
                             }
-                            ?>" ><a href=""><i class="fas fa-user-tie"></i> My Account</a> <ul>
-	<li><a href="sellerpanel.php"><i class="fas fa-user-cog"></i> Farmer/Seller Panel</a></li> <li class="drop-down"><a href="#"><i class="fas fa-user"></i> My Profile</a> <ul>
-			<li><a href="sellerprofile.php"><i class="fas fa-edit"></i> Update Profile</a></li> <li><a href="Sellerchngpassword.php"><i class="fas fa-key"></i> Change Password</a></li> </ul>
+                            ?>" ><a href="" data-key="nav_my_account"><i class="fas fa-user-tie"></i> My Account</a> <ul>
+	<li><a href="sellerpanel.php" data-key="nav_seller_panel"><i class="fas fa-user-cog"></i> Farmer/Seller Panel</a></li> <li class="drop-down"><a href="#" data-key="nav_my_profile"><i class="fas fa-user"></i> My Profile</a> <ul>
+			<li><a href="sellerprofile.php" data-key="nav_update_profile"><i class="fas fa-edit"></i> Update Profile</a></li> <li><a href="Sellerchngpassword.php" data-key="nav_change_password"><i class="fas fa-key"></i> Change Password</a></li> </ul>
 	</li>
 
-	<li class="drop-down"><a href="#"><i class="fas fa-store-alt"></i> Seller Settings</a> <ul>
-			<li><a href="Product.php"><i class="fas fa-tags"></i> Put Your Products On Sale</a></li> <li><a href="viewProduct.php"><i class="fas fa-eye"></i> View Your Products On Sale</a></li> </ul>
+	<li class="drop-down"><a href="#" data-key="nav_seller_settings"><i class="fas fa-store-alt"></i> Seller Settings</a> <ul>
+			<li><a href="Product.php" data-key="nav_put_products_on_sale"><i class="fas fa-tags"></i> Put Your Products On Sale</a></li> <li><a href="viewProduct.php" data-key="nav_view_products_on_sale"><i class="fas fa-eye"></i> View Your Products On Sale</a></li> </ul>
 	</li>
 
-	<li class="drop-down"><a href="#"><i class="fas fa-chart-bar"></i> Sales Report</a> <ul>
+	<li class="drop-down"><a href="#" data-key="nav_sales_report"><i class="fas fa-chart-bar"></i> Sales Report</a> <ul>
 		<?php
 		/*
 			<li><a href="sellerpanelchart.php">Progress Chart</a></li>
 		*/
 		?>
-          	<li><a href="viewsellerpurchaserequest.php"><i class="fas fa-shopping-cart"></i> View Purchase Request</a></li> <li><a href="viewpurchaseorder.php"><i class="fas fa-clipboard-check"></i> View Purchase Order</a></li> <li><a href="viewpurchasereport.php"><i class="fas fa-file-invoice"></i> Purchase Billing Report</a></li> </ul>
+          	<li><a href="viewsellerpurchaserequest.php" data-key="nav_view_pr"><i class="fas fa-shopping-cart"></i> View Purchase Request</a></li> <li><a href="viewpurchaseorder.php" data-key="nav_view_po"><i class="fas fa-clipboard-check"></i> View Purchase Order</a></li> <li><a href="viewpurchasereport.php" data-key="nav_purchase_billing_report"><i class="fas fa-file-invoice"></i> Purchase Billing Report</a></li> </ul>
 	</li>
 
-	<li class="drop-down"><a href="#"><i class="fas fa-tractor"></i> Farmer's Settings</a> <ul>
-		<li><a href="sellingproduct.php"><i class="fas fa-plus-circle"></i> Add Products to Farmer's Market</a></li> <li><a href="viewsproduct.php"><i class="fas fa-list"></i> View Products to Farmer's Market</a></li> </ul>
+	<li class="drop-down"><a href="#" data-key="nav_farmers_settings"><i class="fas fa-tractor"></i> Farmer's Settings</a> <ul>
+		<li><a href="sellingproduct.php" data-key="nav_add_products_fm"><i class="fas fa-plus-circle"></i> Add Products to Farmer's Market</a></li> <li><a href="viewsproduct.php" data-key="nav_view_products_fm"><i class="fas fa-list"></i> View Products to Farmer's Market</a></li> </ul>
 	</li>
-	<li class="drop-down"><a href="#"><i class="fas fa-chart-line"></i> Farmer's Market Report</a> <ul>
-			<li><a href="viewcstpurchasereport.php"><i class="fas fa-file-alt"></i> Product Purchase Report</a></li> </ul>
-	</li>
-
-	<li class="drop-down"><a href="#"><i class="fas fa-users"></i> Hire details</a> <ul>
-			<li><a href="viewworkerrequest.php"><i class="fas fa-user-check"></i> View Hired Worker</a></li> </ul>
+	<li class="drop-down"><a href="#" data-key="nav_farmers_market_report"><i class="fas fa-chart-line"></i> Farmer's Market Report</a> <ul>
+			<li><a href="viewcstpurchasereport.php" data-key="nav_product_purchase_report"><i class="fas fa-file-alt"></i> Product Purchase Report</a></li> </ul>
 	</li>
 
-	<li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li> </ul>
+	<li class="drop-down"><a href="#" data-key="nav_hire_details"><i class="fas fa-users"></i> Hire details</a> <ul>
+			<li><a href="viewworkerrequest.php" data-key="nav_view_hired_worker"><i class="fas fa-user-check"></i> View Hired Worker</a></li> </ul>
+	</li>
+
+	<li><a href="logout.php" data-key="nav_logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li> </ul>
 </li>
 <?php
 }
@@ -151,8 +151,8 @@ else if(isset($_SESSION['workerid']))
                             {
                               echo ' active ';
                             }
-                            ?>" ><a href=""><i class="fas fa-wrench"></i> My Account</a> <ul>
-	<li><a href="workerpanel.php"><i class="fas fa-tools"></i> Worker Panel</a></li> <li><a href="workerprofile.php"><i class="fas fa-user"></i> My Profile</a></li> <li><a href="Workerchngpassword.php"><i class="fas fa-key"></i> Change Password</a></li> <li><a href="viewworkerrequest.php"><i class="fas fa-briefcase"></i> View Your Jobs</a></li> <li><a href="workerpanel.php?workschedule=set"><i class="fas fa-calendar-alt"></i> Work Schedule</a></li> <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li> </ul>
+                            ?>" ><a href="" data-key="nav_my_account"><i class="fas fa-wrench"></i> My Account</a> <ul>
+	<li><a href="workerpanel.php" data-key="nav_worker_panel"><i class="fas fa-tools"></i> Worker Panel</a></li> <li><a href="workerprofile.php" data-key="nav_my_profile"><i class="fas fa-user"></i> My Profile</a></li> <li><a href="Workerchngpassword.php" data-key="nav_change_password"><i class="fas fa-key"></i> Change Password</a></li> <li><a href="viewworkerrequest.php" data-key="nav_view_your_jobs"><i class="fas fa-briefcase"></i> View Your Jobs</a></li> <li><a href="workerpanel.php?workschedule=set" data-key="nav_work_schedule"><i class="fas fa-calendar-alt"></i> Work Schedule</a></li> <li><a href="logout.php" data-key="nav_logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li> </ul>
 </li>
 <?php
 }
@@ -164,45 +164,45 @@ else if(isset($_SESSION['adminid']))
                             {
                               echo ' active ';
                             }
-                            ?>" ><a href=""><i class="fas fa-user-shield"></i> My Account</a> <ul>
-	<li><a href="adminpanel.php"><i class="fas fa-cogs"></i> Admin Panel</a></li> <li class="drop-down"><a href="#"><i class="fas fa-file-alt"></i> Report</a> <ul>
-		<li><a href="viewcustomerReg.php"><i class="fas fa-users"></i> Customer Account Report</a></li>      <li><a href="viewseller.php"><i class="fas fa-user-friends"></i> Farmer Account Report</a></li> <li><a href="viewadminpurchasereport.php"><i class="fas fa-file-invoice-dollar"></i> Farmer's Market - Product Billing Report</a></li> <li><a href="viewSellingProduce.php"><i class="fas fa-seedling"></i> Farmer's Kit - Produce Report</a></li> <li><a href="viewadminpurchaserequest.php"><i class="fas fa-shopping-basket"></i> Farmer's Kit - Produce Purchase Request</a></li> <li><a href="viewpurchasereport.php"><i class="fas fa-receipt"></i> Farmer's Kit - Produce Billing Report</a></li> </ul>
+                            ?>" ><a href="" data-key="nav_my_account"><i class="fas fa-user-shield"></i> My Account</a> <ul>
+	<li><a href="adminpanel.php" data-key="nav_admin_panel"><i class="fas fa-cogs"></i> Admin Panel</a></li> <li class="drop-down"><a href="#" data-key="nav_report"><i class="fas fa-file-alt"></i> Report</a> <ul>
+		<li><a href="viewcustomerReg.php" data-key="nav_customer_account_report"><i class="fas fa-users"></i> Customer Account Report</a></li>      <li><a href="viewseller.php" data-key="nav_farmer_account_report"><i class="fas fa-user-friends"></i> Farmer Account Report</a></li> <li><a href="viewadminpurchasereport.php" data-key="nav_fm_billing_report"><i class="fas fa-file-invoice-dollar"></i> Farmer's Market - Product Billing Report</a></li> <li><a href="viewSellingProduce.php" data-key="nav_fk_produce_report"><i class="fas fa-seedling"></i> Farmer's Kit - Produce Report</a></li> <li><a href="viewadminpurchaserequest.php" data-key="nav_fk_produce_pr"><i class="fas fa-shopping-basket"></i> Farmer's Kit - Produce Purchase Request</a></li> <li><a href="viewpurchasereport.php" data-key="nav_fk_produce_billing"><i class="fas fa-receipt"></i> Farmer's Kit - Produce Billing Report</a></li> </ul>
 	</li>
 
-	<li class="drop-down"><a href="#"><i class="fas fa-cog"></i> General Settings</a> <ul>
-<li><a href="admin.php"><i class="fas fa-user-plus"></i> Add Admin</a></li> <li><a href="viewadmin.php"><i class="fas fa-user-shield"></i> View Admin</a></li> <li><a href="chngadminpassword.php"><i class="fas fa-key"></i> Change My Password</a></li> <li><a href="city.php"><i class="fas fa-city"></i> Add City</a></li> <li><a href="viewcity.php"><i class="fas fa-building"></i> View City</a></li> <li><a href="state.php"><i class="fas fa-flag-usa"></i> Add State</a></li> <li><a href="viewstate.php"><i class="fas fa-map"></i> View State</a></li>   						<li><a href="country.php"><i class="fas fa-globe-americas"></i> Add Country</a></li> <li><a href="viewcountry.php"><i class="fas fa-globe"></i> View Country</a></li> </ul>
+	<li class="drop-down"><a href="#" data-key="nav_general_settings"><i class="fas fa-cog"></i> General Settings</a> <ul>
+<li><a href="admin.php" data-key="nav_add_admin"><i class="fas fa-user-plus"></i> Add Admin</a></li> <li><a href="viewadmin.php" data-key="nav_view_admin"><i class="fas fa-user-shield"></i> View Admin</a></li> <li><a href="chngadminpassword.php" data-key="nav_change_my_password"><i class="fas fa-key"></i> Change My Password</a></li> <li><a href="city.php" data-key="nav_add_city"><i class="fas fa-city"></i> Add City</a></li> <li><a href="viewcity.php" data-key="nav_view_city"><i class="fas fa-building"></i> View City</a></li> <li><a href="state.php" data-key="nav_add_state"><i class="fas fa-flag-usa"></i> Add State</a></li> <li><a href="viewstate.php" data-key="nav_view_state"><i class="fas fa-map"></i> View State</a></li>   						<li><a href="country.php" data-key="nav_add_country"><i class="fas fa-globe-americas"></i> Add Country</a></li> <li><a href="viewcountry.php" data-key="nav_view_country"><i class="fas fa-globe"></i> View Country</a></li> </ul>
 	</li>
 
-	<li class="drop-down"><a href="#"><i class="fas fa-store"></i> Seller Settings</a> <ul>
-<li><a href="category.php?cattype=Produce"><i class="fas fa-tags"></i> Add Product category</a></li> <li><a href="viewcategory.php?cattype=Produce"><i class="fas fa-list-alt"></i> View Product category</a></li>   <li><a href="Produce.php"><i class="fas fa-carrot"></i> Add Product types</a></li> <li><a href="viewProduce.php"><i class="fas fa-seedling"></i> View Product types</a></li>       <li><a href="variety.php?varietytype=Produce"><i class="fas fa-leaf"></i> Add Product Variety</a></li> <li><a href="viewvariety.php?varietytype=Produce"><i class="fas fa-list"></i> View Product Variety</a></li> </ul>
+	<li class="drop-down"><a href="#" data-key="nav_seller_settings"><i class="fas fa-store"></i> Seller Settings</a> <ul>
+<li><a href="category.php?cattype=Produce" data-key="nav_add_product_category"><i class="fas fa-tags"></i> Add Product category</a></li> <li><a href="viewcategory.php?cattype=Produce" data-key="nav_view_product_category"><i class="fas fa-list-alt"></i> View Product category</a></li>   <li><a href="Produce.php" data-key="nav_add_product_types"><i class="fas fa-carrot"></i> Add Product types</a></li> <li><a href="viewProduce.php" data-key="nav_view_product_types"><i class="fas fa-seedling"></i> View Product types</a></li>       <li><a href="variety.php?varietytype=Produce" data-key="nav_add_product_variety"><i class="fas fa-leaf"></i> Add Product Variety</a></li> <li><a href="viewvariety.php?varietytype=Produce" data-key="nav_view_product_variety"><i class="fas fa-list"></i> View Product Variety</a></li> </ul>
 	</li>
 
-	<li class="drop-down"><a href="#"><i class="fas fa-hard-hat"></i> Worker</a> <ul>
-<li><a href="viewworker.php"><i class="fas fa-users"></i> View Worker</a></li> <li><a href="viewworkerrequest.php"><i class="fas fa-clipboard-list"></i> View Worker Request</a></li> </ul>
+	<li class="drop-down"><a href="#" data-key="nav_worker"><i class="fas fa-hard-hat"></i> Worker</a> <ul>
+<li><a href="viewworker.php" data-key="nav_view_worker"><i class="fas fa-users"></i> View Worker</a></li> <li><a href="viewworkerrequest.php" data-key="nav_view_worker_request"><i class="fas fa-clipboard-list"></i> View Worker Request</a></li> </ul>
 	</li>
 
-	<li class="drop-down"><a href="#"><i class="fas fa-tractor"></i> Farmer's Settings</a> <ul>
-		<li><a href="category.php?cattype=SellingProduct"><i class="fas fa-tags"></i> Add Selling Product Category</a></li>     <li><a href="viewcategory.php?cattype=SellingProduct"><i class="fas fa-list-alt"></i> View Selling Product Category</a></li>  <li><a href="sellingproduct.php"><i class="fas fa-plus-circle"></i> Add Products to Farmer's Market</a></li> <li><a href="viewsellingproduct.php"><i class="fas fa-list"></i> View Products to Farmer's Market</a></li> </ul>
+	<li class="drop-down"><a href="#" data-key="nav_farmers_settings"><i class="fas fa-tractor"></i> Farmer's Settings</a> <ul>
+		<li><a href="category.php?cattype=SellingProduct" data-key="nav_add_selling_product_category"><i class="fas fa-tags"></i> Add Selling Product Category</a></li>     <li><a href="viewcategory.php?cattype=SellingProduct" data-key="nav_view_selling_product_category"><i class="fas fa-list-alt"></i> View Selling Product Category</a></li>  <li><a href="sellingproduct.php" data-key="nav_add_products_fm"><i class="fas fa-plus-circle"></i> Add Products to Farmer's Market</a></li> <li><a href="viewsellingproduct.php" data-key="nav_view_products_fm"><i class="fas fa-list"></i> View Products to Farmer's Market</a></li> </ul>
 	</li>
 
-	<li class="drop-down"><a href="#"><i class="fas fa-newspaper"></i> Article Settings</a> <ul>
-		<li><a href="article.php"><i class="fas fa-plus-square"></i> Add Article</a></li>         <li><a href="viewarticle.php"><i class="fas fa-eye"></i> View Article</a></li> </ul>
+	<li class="drop-down"><a href="#" data-key="nav_article_settings"><i class="fas fa-newspaper"></i> Article Settings</a> <ul>
+		<li><a href="article.php" data-key="nav_add_article"><i class="fas fa-plus-square"></i> Add Article</a></li>         <li><a href="viewarticle.php" data-key="nav_view_article"><i class="fas fa-eye"></i> View Article</a></li> </ul>
 	</li>
 
-	<li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li> </ul>
+	<li><a href="logout.php" data-key="nav_logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li> </ul>
 </li>
 <?php
 }
 else
 {
 ?>
-<li class="drop-down"><a href=""><i class="fas fa-user-circle"></i> My Account</a> <ul>
-	<li><a href="customerreglogin.php"><i class="fas fa-user"></i> As Customer</a></li> <li><a href="farmerreglogin.php"><i class="fas fa-user-tie"></i> As Farmer/Seller</a></li> <li><a href="workerreglogin.php"><i class="fas fa-hard-hat"></i> As Worker</a></li> </ul>
+<li class="drop-down"><a href="" data-key="nav_my_account"><i class="fas fa-user-circle"></i> My Account</a> <ul>
+	<li><a href="customerreglogin.php" data-key="nav_as_customer"><i class="fas fa-user"></i> As Customer</a></li> <li><a href="farmerreglogin.php" data-key="nav_as_farmer_seller"><i class="fas fa-user-tie"></i> As Farmer/Seller</a></li> <li><a href="workerreglogin.php" data-key="nav_as_worker"><i class="fas fa-hard-hat"></i> As Worker</a></li> </ul>
 </li>
 <?php
 }
 ?>
-			<li><a href="contact.php"><i class="fas fa-envelope"></i> Contact Us</a></li> <?php
+			<li><a href="contact.php" data-key="nav_contact_us"><i class="fas fa-envelope"></i> Contact Us</a></li> <?php
 $sqlproduct_purchase_record = "SELECT * FROM  product_purchase_record
 WHERE status='Pending'";
 if(isset($_SESSION['customerid']))
@@ -221,14 +221,18 @@ $qsqlproduct_purchase_record = mysqli_query($con,$sqlproduct_purchase_record);
 if(mysqli_num_rows($qsqlproduct_purchase_record) >= 1)
 {
 ?>
-<li class="get-started"><a href="displaycart.php"><i class="fas fa-shopping-cart"></i> Cart (<?php echo mysqli_num_rows($qsqlproduct_purchase_record); ?>)</a></li> <?php
+<li class="get-started"><a href="displaycart.php" data-key="nav_cart"><i class="fas fa-shopping-cart"></i> Cart (<?php echo mysqli_num_rows($qsqlproduct_purchase_record); ?>)</a></li> <?php
 }
 else
 {
 ?>
-<li  class="get-started" ><a href="#"><i class="fas fa-shopping-cart"></i> Cart (<?php echo mysqli_num_rows($qsqlproduct_purchase_record); ?>) </a></li> <?php
+<li  class="get-started" ><a href="#" data-key="nav_cart"><i class="fas fa-shopping-cart"></i> Cart (<?php echo mysqli_num_rows($qsqlproduct_purchase_record); ?>) </a></li> <?php
 }
 ?>
       </ul>
-        </nav></div></div>
+        </nav>
+        </div>
+    </div>
   </header>
+
+  <script src="assets/js/custom-header.js"></script>
