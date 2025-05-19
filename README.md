@@ -1,16 +1,18 @@
-<<<<<<< HEAD
+
 # TMMZ an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
 =======
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 # Online-agriculture-managment-system
 that i a system that help people to sell,manage and get work online on this system
 =======
 # OAMS an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
 =======
 # TMMZ an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
->>>>>>> f543079 (jjj)
->>>>>>> recovered-work
+ f543079 (jjj)
+recovered-work
+=======
+# TMMZ an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
+ de95aac (Initial commit for my version)
 This website helps farmers/sellers by providing them a large market online to sell their products.
 They can also hire farm labourers and be updated with the recent agricultural developments.
 Farmers can shop for farming equipments easily. The consumers can also buy fresh products directly from the farmers.
@@ -23,7 +25,8 @@ Language(s) to be used are:
 • Programming language: PHP
 • Scripting language: Javascript 
 • Database: MySQL Server, phpmyadmin.
-<<<<<<< HEAD
-=======
->>>>>>> 16402c8 (Create README.md)
->>>>>>> recovered-work
+
+ 16402c8 (Create README.md)
+ recovered-work
+
+ de95aac (Initial commit for my version)
