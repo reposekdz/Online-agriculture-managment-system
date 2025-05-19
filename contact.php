@@ -159,14 +159,15 @@ if(isset($_POST['submit']))
         </div>
       </div>
       
-      <!-- Map Section with Modern Card -->
-      <!-- Map Section with Modern Card - Enhanced Version -->
+     <!-- Map Section with Modern Card - Fully Functional Version -->
 <div class="row mt-5">
   <div class="col-12">
     <!-- Add Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- Add Leaflet Routing Machine CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     
     <div class="map-card shadow-lg rounded-lg overflow-hidden border-0">
       <div class="map-header p-4 bg-gradient-primary text-white d-flex justify-content-between align-items-center">
@@ -230,50 +231,75 @@ if(isset($_POST['submit']))
     <!-- JavaScript for Enhanced Interactive Map -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Initialize variables
+      let map;
+      let userLocation = null;
+      let userLocationMarker = null;
+      let routingControl = null;
+      let currentTransportMode = 'walking';
+      
       // Initialize Leaflet map
-      const map = L.map('interactive-map').setView([-2.26315, 30.63901], 15);
+      function initMap() {
+        map = L.map('interactive-map').setView([-2.26315, 30.63901], 15);
+        
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          maxZoom: 19
+        }).addTo(map);
+        
+        // Create custom icon
+        const customIcon = L.icon({
+          iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34]
+        });
+        
+        // Add TMMZ location marker
+        const tmmzLocation = [-2.26315, 30.63901];
+        const marker = L.marker(tmmzLocation, {icon: customIcon}).addTo(map)
+          .bindPopup(`
+            <div class="map-popup">
+              <h6>TMMZ</h6>
+              <p class="mb-2">Nyamugari Parish, Kirehe</p>
+              <div class="d-flex">
+                <button class="btn btn-sm btn-primary mr-2" id="popup-directions">
+                  <i class="fas fa-directions"></i>
+                </button>
+                <a href="tel:+250788123456" class="btn btn-sm btn-success">
+                  <i class="fas fa-phone"></i>
+                </a>
+              </div>
+            </div>
+          `).openPopup();
+        
+        // Add points of interest
+        const points = [
+          {lat: -2.265, lng: 30.637, type: 'bank', name: 'BK Kirehe'},
+          {lat: -2.261, lng: 30.642, type: 'market', name: 'Isoko rya Kirehe'},
+          {lat: -2.264, lng: 30.640, type: 'school', name: 'G.S. Kirehe'}
+        ];
+        
+        points.forEach(point => {
+          let iconColor;
+          if(point.type === 'bank') iconColor = '#28a745'; // green
+          else if(point.type === 'market') iconColor = '#17a2b8'; // blue
+          else iconColor = '#fd7e14'; // orange
+          
+          L.circleMarker([point.lat, point.lng], {
+            radius: 8,
+            fillColor: iconColor,
+            color: '#fff',
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+          }).addTo(map).bindPopup(`<b>${point.name}</b><br>${point.type}`);
+        });
+      }
       
-      // Add OpenStreetMap tiles
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34]
-      });
-      
-      const tmmzLocation = [-2.26315, 30.63901];
-      const marker = L.marker(tmmzLocation, {icon: customIcon}).addTo(map)
-        .bindPopup(`
-          <div class="map-popup">
-            <h6>TMMZ</h6>
-            <p class="mb-2">Nyamugari Parish, Kirehe</p>
-            <div class="d-flex">
-              <button class="btn btn-sm btn-primary mr-2" id="popup-directions">
-                <i class="fas fa-directions"></i>
-              </button>
-              <a href="tel:+250788123456" class="btn btn-sm btn-success">
-                <i class="fas fa-phone"></i>
-              </a>
-          </div>
-        `).openPopup();
-      
-      // Add points of interest
-      const points = [
-        {lat: -2.265, lng: 30.637, type: 'bank', name: 'BK Kirehe'},
-        {lat: -2.261, lng: 30.642, type: 'market', name: 'Isoko rya Kirehe'},
-        {lat: -2.264, lng: 30.640, type: 'school', name: 'G.S. Kirehe'}
-      ];
-      
-      points.forEach(point => {
-        let iconColor;
-        if(point.type === 'bank') iconColor = '#28a745'; // green
-        else if(point.type === 'market') iconColor = '#17a2b8'; // blue
-        else iconColor = '#fd7e14'; // orange
-          opacity: 1,
-          fillOpacity: 0.8
-        }).addTo(map).bindPopup(`<b>${point.name}</b><br>${point.type}`);
-      });
+      // Initialize the map
+      initMap();
       
       // Map controls functionality
       document.getElementById('zoom-in').addEventListener('click', () => map.zoomIn());
@@ -308,7 +334,7 @@ if(isset($_POST['submit']))
       // Get directions button
       document.getElementById('get-directions').addEventListener('click', () => {
         if(userLocation) {
-          calculateRoute(userLocation, tmmzLocation, currentTransportMode);
+          calculateRoute(userLocation, [-2.26315, 30.63901], currentTransportMode);
         } else {
           alert('Nyamuneka kanda "Shaka aho uri" mbere yo gusaba inzira.');
         }
@@ -321,7 +347,7 @@ if(isset($_POST['submit']))
       document.addEventListener('click', function(e) {
         if(e.target && e.target.id === 'popup-directions') {
           if(userLocation) {
-            calculateRoute(userLocation, tmmzLocation, currentTransportMode);
+            calculateRoute(userLocation, [-2.26315, 30.63901], currentTransportMode);
           } else {
             alert('Nyamuneka kanda "Shaka aho uri" mbere yo gusaba inzira.');
           }
@@ -453,13 +479,31 @@ if(isset($_POST['submit']))
           navigator.share({
             title: 'TMMZ Location',
             text: 'Ahantu duherereye muri Kirehe',
-            url: `https://www.google.com/maps/dir/?api=1&destination=${tmmzLocation[0]},${tmmzLocation[1]}&travelmode=${currentTransportMode}`
-          }).catch(err => console.log('Error sharing:', err));
+            url: `https://www.google.com/maps/dir/?api=1&destination=-2.26315,30.63901&travelmode=${currentTransportMode}`
+          }).then(() => {
+            console.log('Location shared successfully');
+          }).catch(err => {
+            console.log('Error sharing:', err);
+            fallbackShare();
+          });
         } else {
-          // Fallback for browsers that don't support Web Share API
-          const shareUrl = `https://www.google.com/maps/dir/?api=1&destination=${tmmzLocation[0]},${tmmzLocation[1]}&travelmode=${currentTransportMode}`;
-          prompt('Gukoporora URL:', shareUrl);
+          fallbackShare();
         }
+      }
+      
+      // Fallback share function
+      function fallbackShare() {
+        const shareUrl = `https://www.google.com/maps/dir/?api=1&destination=-2.26315,30.63901&travelmode=${currentTransportMode}`;
+        
+        // Create a temporary input element
+        const tempInput = document.createElement('input');
+        tempInput.value = shareUrl;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        
+        alert('URL yerekeye aho duherereye yakoporowe! Urashobora kuyasangiza nabandi. URL: ' + shareUrl);
       }
     });
     </script>
@@ -544,6 +588,12 @@ if(isset($_POST['submit']))
       border-left: 3px solid #4e73df;
       background-color: #f8f9fa;
     }
+    
+    /* User location icon */
+    .user-location-icon {
+      background: transparent;
+      border: none;
+    }
 
     @media (max-width: 768px) {
       .map-container, #interactive-map {
@@ -568,9 +618,4 @@ if(isset($_POST['submit']))
     </style>
   </div>
 </div>
-  </section>
-</main>
 
-<?php
-include("footer.php");
-?>
