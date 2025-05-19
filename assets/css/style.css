@@ -1,0 +1,2282 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #151212;
+  /* Adding a subtle background for a modern feel */
+  background-color: #f8f9fa;
+  /* Smooth scrolling for better user experience */
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #5b43c7;
+  /* Adding a smooth transition for hover effects */
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Added transform */
+}
+
+a:hover {
+  color: rgb(29, 4, 46);
+  text-decoration: none;
+  transform: translateY(-1px); /* Subtle lift on hover */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+  /* Adding a slight text shadow for depth */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  /* Adding a box shadow for visibility */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Adding a subtle animation */
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.back-to-top i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: #0c0a16;
+  color: #fff;
+  transition: all 0.4s;
+  /* Adding a transform for a slight lift effect on hover */
+  transform: translateY(0);
+}
+
+.back-to-top i:hover {
+  background: #293431;
+  color: #fff;
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+/* Keyframes for fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Disable AOS delay on mobile
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  z-index: 997;
+  top: 10px;
+  height: 130px;
+
+}
+
+#header .header-container {
+  background: linear-gradient(90deg, 
+    rgb(231, 243, 231) 0%, 
+    rgb(227, 213, 192) 10%, 
+    rgb(246, 247, 234) 20%, 
+    rgb(244, 245, 244) 30%, 
+    rgb(233, 248, 247) 40%, 
+    rgb(237, 245, 247) 50%, 
+    rgb(239, 242, 245) 60%, 
+    rgb(236, 232, 245) 70%, 
+    rgb(244, 228, 250) 80%, 
+    rgb(250, 233, 248) 90%, 
+    rgb(239, 250, 243) 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 0 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: -100px; /* Increased from -10px */
+  margin-right: 20px; /* Added to match left margin increase */
+  margin-top: -20px;
+  width: calc(100% + 200px); /* Increased width to account for margin changes */
+}
+
+#header.header-scrolled {
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+  top: 0;
+  height: 80px;
+}
+
+#header .logo {
+  overflow: hidden;
+  padding: 20px 30px;
+  background: linear-gradient(135deg, #34d35e, #2bc253);
+  border-radius: 8px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  margin-left: -40px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  transform: perspective(500px) rotateX(0deg);
+}
+
+#header .logo:hover {
+  background: linear-gradient(135deg, #2bc253, #1fb346);
+  transform: perspective(500px) rotateX(5deg);
+  box-shadow: 
+    0 8px 15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+#header .logo::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(30deg);
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+
+#header .logo:hover::before {
+  animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+  0% { left: -50%; top: -50%; }
+  100% { left: 150%; top: 150%; }
+}
+
+#header .logo h1 {
+  font-size: 27px;
+  padding: 0;
+  line-height: 1;
+  font-weight: 900;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: #fff;
+  text-shadow: 
+    2px 2px 5px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+#header .logo:hover h1 {
+  transform: scale(1.05);
+}
+
+#header .logo h1 a, #header .logo h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 70px;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation - Interactive Hover Only */
+.nav-menu, .nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+  margin: 0 6px;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #36343a;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.nav-menu a i {
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+/* Hover States */
+.nav-menu > ul > li > a:hover {
+  color: #5b43c7;
+  background: rgba(91, 67, 199, 0.1);
+}
+
+.nav-menu a:hover i {
+  color: #5b43c7;
+}
+
+/* Get Started Button */
+.nav-menu .get-started a {
+  background: #5b43c7;
+  color: #fff;
+  border-radius: 50px;
+  margin: 0 10px;
+  padding: 8px 20px;
+}
+
+.nav-menu .get-started a:hover {
+  background: #7a5af5;
+}
+
+/* Dropdown Styles */
+.nav-menu .drop-down ul {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  padding: 10px 0;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  border-radius: 5px;
+  min-width: 220px;
+}
+
+.nav-menu .drop-down:hover > ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-menu .drop-down li {
+  min-width: 180px;
+  position: relative;
+}
+
+.nav-menu .drop-down ul a {
+  padding: 10px 20px;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.nav-menu .drop-down ul a:hover {
+  color: #fff;
+  background-color: #5b43c7;
+}
+
+.nav-menu .drop-down ul a:hover i {
+  color: #fff;
+}
+
+/* Dropdown Arrows */
+.nav-menu .drop-down > a:after {
+  content: "\f107";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  padding-left: 5px;
+}
+
+/* Nested Dropdowns */
+.nav-menu .drop-down .drop-down ul {
+  top: 0;
+  left: 100%;
+}
+
+.nav-menu .drop-down .drop-down:hover > ul {
+  opacity: 1;
+}
+
+.nav-menu .drop-down .drop-down > a:after {
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 15px;
+}
+
+@media (max-width: 1366px) {
+  .nav-menu .drop-down .drop-down ul {
+    left: -90%;
+  }
+  .nav-menu .drop-down .drop-down > a:after {
+    content: "\f107";
+  }
+}
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+  color: #36343a; /* Darker color for mobile toggle */
+}
+
+.mobile-nav-toggle i {
+  color: #36343a; /* Darker color for mobile toggle icon */
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 70px; /* Adjusted top position */
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  z-index: 9999;
+  overflow-y: auto;
+  background: #fff;
+  transition: ease-in-out 0.3s; /* Smoother transition */
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+  margin-left:18px; /* Adding shadow to mobile nav */
+}
+
+.mobile-nav * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-nav a {
+  display: flex; /* Use flexbox for icon and text alignment */
+  align-items: center;
+  position: relative;
+  color: #36343a;
+  padding: 12px 20px; /* Adjusted padding */
+  font-weight: 500;
+  outline: none;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.mobile-nav a i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 16px; /* Icon size */
+}
+
+
+.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+  color: #5b43c7;
+  background-color: #f8f9fa; /* Highlight on hover */
+  text-decoration: none;
+}
+
+.mobile-nav .get-started {
+  text-align: center;
+  padding: 10px 0; /* Added padding */
+}
+
+.mobile-nav .get-started a {
+  background: #5b43c7;
+  color: #fff;
+  border-radius: 50px;
+  margin: 0 15px;
+  padding: 10px 25px;
+  display: inline-block;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.mobile-nav .get-started a:hover {
+  background: #00c28e;
+  color: #fff;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.mobile-nav .drop-down > a:after {
+  /* content: "\ea99"; */ /* Remove IcoFont content */
+  content: "\f107"; /* Font Awesome chevron-down */
+  font-family: "Font Awesome 6 Free"; /* Font Awesome font family */
+  font-weight: 900; /* Font Awesome font weight for solid icons */
+  padding-left: 10px;
+  position: absolute;
+  right: 15px;
+  transition: transform 0.3s ease-in-out; /* Add rotation transition */
+}
+
+.mobile-nav .active.drop-down > a:after {
+  /* content: "\eaa1"; */ /* Remove IcoFont content */
+   transform: rotate(180deg); /* Rotate icon when active */
+}
+
+.mobile-nav .drop-down > a {
+  padding-right: 35px;
+}
+
+.mobile-nav .drop-down ul {
+  display: none;
+  overflow: hidden;
+  background: rgba(248, 249, 250, 0.8); /* Slightly transparent background */
+  padding-left: 20px; /* Indent nested items */
+  transition: all 0.3s ease-in-out; /* Add transition for dropdown */
+}
+
+.mobile-nav .drop-down li {
+  padding-left: 0; /* Remove extra padding */
+}
+
+.mobile-nav-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 9997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(29, 28, 31, 0.6);
+  overflow: hidden;
+  display: none;
+  transition: ease-in-out 0.3s; /* Smoother transition */
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #fff; /* White color when mobile nav is active */
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 60vh;
+  background: url("../img/hero.jpg") center center;
+  background-size: cover;
+  position: relative;
+  /* Adding a subtle overlay for better text readability */
+  isolation: isolate; /* Needed for stacking context with ::before */
+}
+
+#hero .container {
+  padding-top: 80px;
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 1;
+}
+
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1; /* Place behind the content */
+}
+
+#hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+  /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#hero h2 {
+  color: #eee;
+  margin-bottom: 40px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+#hero .btn-get-started {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: rgb(222, 250, 14);
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#hero .btn-get-started:hover {
+  background: #3fb65b;
+  border: 2px solid #4fce86;
+  color: #fff; /* Change text color on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 100vh;
+  }
+  #hero .container {
+    padding-top: 60px;
+  }
+  #hero h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f6f6f7;
+}
+
+.section-title {
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #5b43c7;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out; /* Animation for the underline */
+}
+
+.section-title:hover h2::after {
+    width: 80px; /* Expand underline on hover */
+}
+
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Clients
+--------------------------------------------------------------*/
+.clients {
+  background: linear-gradient(135deg, #f6f6f7 0%, #ffffff 100%);
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.clients:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #5b43c7, #7a5af5, #5b43c7);
+  background-size: 200% 100%;
+  animation: gradientFlow 3s linear infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.clients-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.clients-item {
+  position: relative;
+  flex: 0 0 calc(20% - 30px);
+  min-width: 150px;
+  perspective: 1000px;
+}
+
+.clients img {
+  width: 100%;
+  max-width: 180px;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-block;
+  padding: 20px;
+  border-radius: 15px;
+  opacity: 0.7;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transform-style: preserve-3d;
+}
+
+.clients-item:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.15) rotateY(10deg);
+  opacity: 1;
+  box-shadow: 0 10px 25px rgba(91, 67, 199, 0.2);
+  background: white;
+  border-radius: 12px;
+}
+
+/* Pulse effect on hover */
+.clients-item:hover:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: -5px;
+  border-radius: 18px;
+  background: rgba(91, 67, 199, 0.1);
+  z-index: -1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  70% { transform: scale(1.05); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .clients-item {
+    flex: 0 0 calc(25% - 30px);
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-item {
+    flex: 0 0 calc(33.333% - 30px);
+  }
+}
+
+@media (max-width: 576px) {
+  .clients-item {
+    flex: 0 0 calc(50% - 30px);
+  }
+}
+img :hover{
+  border-radius: 20px;
+}
+img{
+  border-radius: 20px;
+}
+.all{
+  margin-left: 800px;
+  margin-top: -110px;
+}
+.copyright{
+  margin-top: -100px;
+}
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.about .content h3 {
+  font-weight: 500;
+  line-height: 32px;
+  font-size: 24px;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding: 10px 0 0 28px;
+  position: relative;
+  /* Adding a subtle hover effect */
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Added transform */
+}
+
+.about .content ul li:hover {
+    color: #5b43c7; /* Highlight text on hover */
+    transform: translateX(5px); /* Slide effect on hover */
+}
+
+.about .content ul i {
+  left: 0;
+  top: 7px;
+  position: absolute;
+  font-size: 20px;
+  color: #5b43c7;
+  /* Adding a subtle pulse animation or transform on hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+.about .content ul li:hover i {
+    transform: scale(1.2); /* Enlarge icon on hover */
+}
+
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+.counts {
+  background: #3048a8;
+  padding: 20px 0 0px 0;
+  color: #fff;
+}
+
+.counts .counters span {
+  font-size: 36px;
+  display: block;
+  font-weight: 700;
+  /* Adding a simple animation for counts */
+  animation: countUp 2s ease-in-out;
+}
+
+/* Keyframes for count up animation (requires JavaScript for actual counting) */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.counts .counters p {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+.why-us .content {
+  padding: 30px;
+  background: #5b43c7;
+  border-radius: 4px;
+  color: #fff;
+  /* Adding a subtle gradient background */
+  background: linear-gradient(45deg, #5b43c7, #7a5ed6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adding shadow */
+}
+
+.why-us .content h3 {
+  font-weight: 700;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+.why-us .content p {
+  margin-bottom: 30px;
+}
+
+/* Enhanced "View More" Button Styling */
+.why-us .content .more-btn {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 35px; /* Increased padding */
+  color: #fff;
+  border-radius: 50px;
+  transition: all ease-in-out 0.4s;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* More prominent border */
+  font-weight: 600; /* Bolder text */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* Increased letter spacing */
+  position: relative; /* For potential pseudo-element effects */
+  overflow: hidden; /* Hide overflow for ripple effect */
+  z-index: 1; /* Ensure button is above other elements */
+}
+
+.why-us .content .more-btn i {
+  font-size: 14px;
+  margin-left: 5px; /* Space between text and icon */
+}
+
+.why-us .content .more-btn:hover {
+  color: #5b43c7;
+  background: #fff;
+  border-color: #fff; /* Change border color on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+  transform: translateY(-5px); /* More pronounced lift on hover */
+}
+
+/* Optional: Add a ripple effect on click (requires JavaScript) */
+.why-us .content .more-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.2); /* Ripple color */
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.7s ease-in-out;
+    z-index: -1;
+}
+
+.why-us .content .more-btn:active::before {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+}
+
+
+.why-us .icon-boxes .icon-box {
+  text-align: center;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  width: 100%;
+  transition: 0.3s;
+  border: 1px solid #eee; /* Adding a subtle border */
+  transform: translateY(0); /* For hover effect */
+}
+
+.why-us .icon-boxes .icon-box i {
+  font-size: 40px;
+  color: #5b43c7;
+  margin-bottom: 30px;
+  /* Adding a subtle animation or transform on hover */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.why-us .icon-boxes .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.why-us .icon-boxes .icon-box p {
+  font-size: 15px;
+  color: #848484;
+}
+
+.why-us .icon-boxes .icon-box:hover {
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px); /* Lift effect on hover */
+  border-color: #5b43c7; /* Highlight border on hover */
+}
+
+.why-us .icon-boxes .icon-box:hover i {
+    transform: scale(1.1); /* Enlarge icon on hover */
+    color: #7a5ed6; /* Change icon color on hover */
+}
+
+.why-us .icon-boxes .icon-box:hover h4 {
+    color: #5b43c7; /* Change title color on hover */
+}
+
+
+/* Icon styling suggestions for AI modern look:
+   Consider using abstract or geometric shapes, subtle gradients, or neon colors for icons.
+   Icon libraries like Phosphor Icons (with a focus on duotone or bold styles) or custom SVGs could work well.
+   You would replace the `i` elements with SVG or adjust the `i` styles based on the icon font used.
+*/
+
+
+/*--------------------------------------------------------------
+# Cta
+--------------------------------------------------------------*/
+.cta {
+  background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(0, 0, 0, 0.7)), url("../img/cta-bg.jpg") fixed center center;
+  background-size: cover;
+  padding: 60px 0;
+  position: relative;
+  isolation: isolate; /* Needed for stacking context with ::before */
+}
+
+.cta::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay */
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1; /* Place behind content */
+}
+
+
+.cta h3 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add text shadow */
+}
+
+.cta p {
+  color: #fff;
+  opacity: 0.9; /* Slightly lower opacity for contrast */
+}
+
+.cta .cta-btn {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 25px;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cta .cta-btn:hover {
+  background: #5b43c7;
+  border: 2px solid #5b43c7;
+  transform: translateY(-3px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+  text-align: center;
+  padding: 40px 20px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); /* Add default shadow */
+  border-radius: 10px; /* Rounded corners */
+  transform: translateY(0); /* For hover effect */
+}
+
+.services .icon-box .icon {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  border: 1px solid #5b43c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: ease-in-out 0.3s;
+  color: #5b43c7;
+  /* Adding a subtle gradient to the icon background */
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+}
+
+.services .icon-box .icon i {
+  font-size: 28px;
+}
+
+.services .icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.services .icon-box h4 a {
+  color: #36343a;
+  transition: ease-in-out 0.3s;
+}
+
+.services .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.services .icon-box:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.services .icon-box:hover h4 a {
+  color: #5b43c7;
+}
+
+.services .icon-box:hover .icon {
+  color: #fff;
+  background: #5b43c7;
+  /* Changing gradient on hover */
+  background: linear-gradient(45deg, #5b43c7, #7a5ed6);
+  border-color: #7a5ed6; /* Change border color on hover */
+}
+
+/* Icon styling suggestions for Services:
+   Similar to the Why Us section, consider modern, clean icons.
+   Outline icons, icons with subtle fills, or icons that represent data/technology could fit.
+*/
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+  overflow: hidden; /* Ensure hover effects stay within bounds */
+  border-radius: 10px; /* Rounded corners for portfolio items */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add default shadow */
+}
+
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #444444;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50px;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #ccc; /* Add a subtle border */
+}
+
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+  color: #fff;
+  background: #5b43c7;
+  border-color: #5b43c7; /* Change border color on active/hover */
+}
+
+.portfolio #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+
+.portfolio .portfolio-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(54, 52, 58, 0.6);
+}
+
+.portfolio .portfolio-wrap::before {
+  content: "";
+  background: rgba(54, 52, 58, 0.6);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.portfolio .portfolio-wrap img {
+  transition: all ease-in-out 0.3s;
+  /* Add border radius and shadow on hover */
+  transform: scale(1); /* Initial state for hover effect */
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7); /* Darker overlay for info */
+  color: #fff;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.portfolio .portfolio-wrap .portfolio-info p {
+  color: rgba(255, 255, 255, 0.9); /* Slightly higher opacity */
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+}
+
+.portfolio .portfolio-wrap .portfolio-links {
+  text-align: center;
+  z-index: 4;
+  margin-top: 15px; /* Add space between text and buttons */
+}
+
+/* Styling the product image links as buttons */
+.portfolio .portfolio-wrap .portfolio-links a {
+  color: #fff;
+  margin: 0 8px; /* Increased margin between buttons */
+  font-size: 18px; /* Adjusted icon size */
+  display: inline-flex; /* Use inline-flex for better alignment */
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.2); /* Subtle background for icons */
+  border-radius: 50%; /* Rounded background */
+  width: 40px; /* Button size */
+  height: 40px; /* Button size */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Add a subtle border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+  transform: scale(1); /* Initial state for hover effect */
+  position: relative; /* For potential pseudo-elements */
+  overflow: hidden; /* Hide overflow for ripple effect */
+  z-index: 1; /* Ensure button is above other elements */
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  color: #00cc95;
+  background: rgba(255, 255, 255, 0.4); /* Darker background on hover */
+  border-color: #00cc95; /* Change border color on hover */
+  transform: scale(1.1); /* Enlarge slightly on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+
+/* Optional: Add a ripple effect on click (requires JavaScript) */
+.portfolio .portfolio-wrap .portfolio-links a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.3); /* Ripple color */
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.7s ease-in-out;
+    z-index: -1;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:active::before {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+
+
+.portfolio .portfolio-wrap:hover::before {
+  opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.1); /* Slightly larger scale on hover */
+  border-radius: 15px; /* Apply border radius on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  opacity: 1;
+}
+
+/* Icon styling suggestions for Portfolio links:
+   Use clear, universally recognized icons for view and details.
+   Consider using icons that have a clean, modern look.
+*/
+
+
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+.testimonials .testimonial-item {
+  box-sizing: content-box;
+  padding: 30px 30px 0 30px;
+  margin: 30px 15px;
+  text-align: center;
+  min-height: 350px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  border-radius: 10px; /* Rounded corners */
+  transition: all 0.3s ease-in-out; /* Add transition for hover effect */
+}
+
+.testimonials .testimonial-item:hover {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+
+.testimonials .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 20PX;
+  border: 4px solid #fff;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow to image */
+  transition: all 0.3s ease-in-out; /* Add transition for hover */
+}
+
+.testimonials .testimonial-item .testimonial-img:hover {
+    transform: scale(1.1); /* Enlarge image on hover */
+    border-radius: 30px; /* Change border radius on hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+
+.testimonials .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: #111;
+}
+
+.testimonials .testimonial-item h4 {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
+  color: #66ffd6;
+  font-size: 26px;
+  opacity: 0.6; /* Slightly transparent */
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+}
+
+.testimonials .testimonial-item p {
+  font-style: italic;
+  margin: 0 auto 15px auto;
+}
+
+.testimonials .owl-nav, .testimonials .owl-dots {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.testimonials .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd !important;
+  transition: background-color 0.3s ease-in-out; /* Add transition */
+}
+
+.testimonials .owl-dot.active {
+  background-color: #5b43c7 !important;
+}
+
+.testimonials .owl-dot:hover {
+    background-color: #5b43c7 !important; /* Highlight on hover */
+}
+
+
+@media (max-width: 767px) {
+  .testimonials {
+    margin: 30px 10px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+.team .member {
+  position: relative;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease-in-out; /* Add transition for hover effect */
+  overflow: hidden; /* Ensure hover effects stay within bounds */
+}
+
+.team .member:hover {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+
+.team .member .pic {
+  overflow: hidden;
+  width: 150px;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  border: 5px solid #fff; /* Add a border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow to image container */
+  transition: all 0.3s ease-in-out; /* Add transition for hover */
+}
+
+.team .member .pic img {
+  transition: ease-in-out 0.3s;
+}
+
+.team .member:hover .pic {
+    border-color: #5b43c7; /* Change border color on hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+.team .member:hover img {
+  transform: scale(1.1);
+}
+
+
+.team .member h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: #36343a;
+}
+
+.team .member span {
+  display: block;
+  font-size: 15px;
+  padding-bottom: 10px;
+  position: relative;
+  font-weight: 500;
+}
+
+.team .member span::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #b5b3ba;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Add transition */
+}
+
+.team .member:hover span::after {
+    width: 70px; /* Expand underline on hover */
+    background-color: #5b43c7; /* Change color on hover */
+}
+
+
+.team .member p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+}
+
+.team .member .social {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team .member .social a {
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
+  background: #a8a5ae;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.team .member .social a i {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+.team .member .social a:hover {
+  background: #5b43c7;
+  transform: scale(1.1); /* Enlarge icons on hover */
+}
+
+.team .member .social a + a {
+  margin-left: 8px;
+}
+
+/* Icon styling suggestions for Team social links:
+   Use standard social media icons. Consider a consistent style (e.g., filled, outline).
+*/
+
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .info {
+  padding: 30px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Rounded corners */
+}
+
+.contact .info i {
+  font-size: 20px;
+  color: #fff;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #5b43c7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  /* Adding a subtle pulse animation or transform on hover */
+  transform: scale(1);
+}
+
+.contact .info .address:hover i,
+.contact .info .email:hover i,
+.contact .info .phone:hover i {
+    transform: scale(1.1); /* Enlarge icon on hover */
+    background: #7a5ed6; /* Change background on hover */
+}
+
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #36343a;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #686470;
+}
+
+.contact .php-email-form {
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 10px; /* Rounded corners */
+}
+
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .php-email-form .validate {
+  display: none;
+  color: red;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  border-radius: 5px; /* Rounded corners */
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  border-radius: 5px; /* Rounded corners */
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input, .contact .php-email-form textarea {
+  border-radius: 5px; /* Rounded corners for form inputs */
+  box-shadow: none;
+  font-size: 14px;
+  border: 1px solid #ccc; /* Add a subtle border */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+    border-color: #5b43c7; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(91, 67, 199, 0.5); /* Add subtle shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+
+.contact .php-email-form input {
+  height: 44px;
+}
+
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.contact .php-email-form button[type="submit"] {
+  background: #5b43c7;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+  background: #00805d;
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Icon styling suggestions for Contact info:
+   Use clear icons for location, email, and phone. Consider a simple, outline style.
+*/
+
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background: #f6f6f7;
+  margin-top: 100px;
+  border-bottom: 1px solid #eee; /* Subtle border */
+}
+
+.breadcrumbs h2 {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #4f4c55;
+  content: "/";
+}
+
+.breadcrumbs ol li a {
+    transition: color 0.3s ease-in-out; /* Add transition for links */
+}
+
+.breadcrumbs ol li a:hover {
+    color: #5b43c7; /* Highlight link on hover */
+}
+
+
+@media (max-width: 768px) {
+  .breadcrumbs .d-flex {
+    display: block !important;
+  }
+  .breadcrumbs ol {
+    display: block;
+  }
+  .breadcrumbs ol li {
+    display: inline-block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details
+--------------------------------------------------------------*/
+.portfolio-details {
+  padding-top: 40px;
+}
+
+.portfolio-details .portfolio-details-container {
+  position: relative;
+}
+
+.portfolio-details .portfolio-details-carousel {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow to carousel */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure rounded corners are visible */
+}
+
+.portfolio-details .portfolio-details-carousel .owl-nav, .portfolio-details .portfolio-details-carousel .owl-dots {
+  margin-top: 5px;
+  text-align: left;
+}
+
+.portfolio-details .portfolio-details-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd !important;
+  transition: background-color 0.3s ease-in-out; /* Add transition */
+}
+
+.portfolio-details .portfolio-details-carousel .owl-dot.active {
+  background-color: rgb(46, 54, 77) !important;
+}
+
+.portfolio-details .portfolio-details-carousel .owl-dot:hover {
+    background-color: rgb(46, 54, 77) !important; /* Highlight on hover */
+}
+
+
+.portfolio-details .portfolio-info {
+  padding: 30px;
+  position: absolute;
+  right: 0;
+  bottom: -70px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li + li {
+  margin-top: 10px;
+}
+
+.portfolio-details .portfolio-description {
+  padding-top: 50px;
+}
+
+.portfolio-details .portfolio-description h2 {
+  width: 50%;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .portfolio-details .portfolio-info {
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  color: white;
+  font-size: 14px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  /* Adjusted padding-top to decrease overall height */
+  padding-top: 48px; /* Original was 80px (60% of 80px is 48px) */
+  position: relative;
+  overflow: hidden;
+  border-top: 5px solid #5b43c7;
+  box-shadow: 0 -10px 30px rgba(91, 67, 199, 0.2);
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Keep background full height */
+  background:
+    radial-gradient(circle at 20% 30%, rgba(91, 67, 199, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(102, 255, 214, 0.15) 0%, transparent 40%);
+  z-index: 0;
+  opacity: 0.8;
+}
+
+#footer .footer-top {
+  /* Adjusted padding to decrease overall height */
+  padding: 36px 0 24px 0; /* Original was 60px 0 40px 0 (60% of 60px is 36px, 60% of 40px is 24px) */
+  position: relative;
+  z-index: 1;
+}
+
+#footer .footer-top .footer-contact {
+  /* Adjusted margin-bottom */
+  margin-bottom: 30px; /* Original was 50px (60% of 50px is 30px) */
+  animation: fadeInUp 0.6s ease-out;
+}
+
+#footer .footer-top .footer-contact h4 {
+  font-size: 28px; /* Keep font size */
+  margin: 0 0 30px 0; /* Keep margin as it affects spacing within the contact block */
+  padding: 2px 0; /* Keep padding */
+  line-height: 1; /* Keep line height */
+  font-weight: 900; /* Keep font weight */
+  color: #fff; /* Keep color */
+  text-shadow: 0 2px 10px rgba(91, 67, 199, 0.5); /* Keep text shadow */
+  position: relative; /* Keep position */
+  display: inline-block; /* Keep display */
+}
+
+#footer .footer-top .footer-contact h4::after {
+  content: ''; /* Keep content */
+  position: absolute; /* Keep position */
+  bottom: -10px; /* Keep bottom */
+  left: 0; /* Keep left */
+  width: 100%; /* Keep width */
+  height: 3px; /* Keep height */
+  background: linear-gradient(90deg, #5b43c7 0%, #66ffd6 100%); /* Keep background */
+  transform: scaleX(0); /* Keep transform */
+  transform-origin: left; /* Keep transform-origin */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Keep transition */
+}
+
+#footer .footer-top .footer-contact h4:hover::after {
+  transform: scaleX(1); /* Keep transform */
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 16px; /* Keep font size */
+  line-height: 1.8; /* Keep line height */
+  /* Adjusted margin-bottom */
+  margin-bottom: 9px; /* Original was 15px (60% of 15px is 9px) */
+  font-family: "Raleway", sans-serif; /* Keep font family */
+  color: rgba(255, 255, 255, 0.9); /* Keep color */
+  transition: transform 0.3s ease; /* Keep transition */
+}
+
+#footer .footer-top .footer-contact p:hover {
+  transform: translateX(5px); /* Keep transform */
+}
+
+#footer .footer-top h4 {
+  font-size: 22px; /* Keep font size */
+  font-weight: 700; /* Keep font weight */
+  color: #fff; /* Keep color */
+  position: relative; /* Keep position */
+  /* Adjusted padding-bottom */
+  padding-bottom: 9px; /* Original was 15px (60% of 15px is 9px) */
+  /* Adjusted margin-bottom */
+  margin-bottom: 15px; /* Original was 25px (60% of 25px is 15px) */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Keep text shadow */
+  cursor: default; /* Keep cursor */
+}
+
+#footer .footer-top h4::after {
+  content: ''; /* Keep content */
+  position: absolute; /* Keep position */
+  display: block; /* Keep display */
+  width: 50px; /* Keep width */
+  height: 3px; /* Keep height */
+  background: linear-gradient(90deg, #5b43c7 0%, #66ffd6 100%); /* Keep background */
+  bottom: 0; /* Keep bottom */
+  left: 0; /* Keep left */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Keep transition */
+}
+
+#footer .footer-top h4:hover::after {
+  width: 100px; /* Keep width */
+  height: 4px; /* Keep height */
+  background: linear-gradient(90deg, #66ffd6 0%, #5b43c7 100%); /* Keep background */
+}
+
+#footer .footer-top .footer-links {
+  /* Adjusted margin-bottom */
+  margin-bottom: 24px; /* Original was 40px (60% of 40px is 24px) */
+  animation: fadeInUp 0.6s ease-out 0.1s forwards; /* Keep animation */
+  opacity: 0; /* Keep opacity */
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none; /* Keep list-style */
+  padding: 0; /* Keep padding */
+  margin: 0; /* Keep margin */
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 15px; /* Keep padding-right */
+  color: #66ffd6; /* Keep color */
+  font-size: 20px; /* Keep font-size */
+  line-height: 1; /* Keep line-height */
+  transition: all 0.3s ease; /* Keep transition */
+}
+
+#footer .footer-top .footer-links ul li {
+  /* Adjusted padding */
+  padding: 7.2px 0; /* Original was 12px 0 (60% of 12px is 7.2px) */
+  display: flex; /* Keep display */
+  align-items: center; /* Keep align-items */
+  position: relative; /* Keep position */
+  overflow: hidden; /* Keep overflow */
+}
+
+#footer .footer-top .footer-links ul li::before {
+  content: ''; /* Keep content */
+  position: absolute; /* Keep position */
+  left: -100%; /* Keep left */
+  bottom: 0; /* Keep bottom */
+  width: 100%; /* Keep width */
+  height: 1px; /* Keep height */
+  background: linear-gradient(90deg, transparent 0%, #66ffd6 50%, transparent 100%); /* Keep background */
+  transition: all 0.5s ease; /* Keep transition */
+}
+
+#footer .footer-top .footer-links ul li:hover::before {
+  left: 100%; /* Keep left */
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0; /* Keep padding-top */
+}
+
+#footer .footer-top .footer-links ul li:hover {
+  color: #fff; /* Keep color */
+}
+
+#footer .footer-top .footer-links ul li:hover i {
+  transform: translateX(10px) scale(1.2); /* Keep transform */
+  color: #98ffeb; /* Keep color */
+  text-shadow: 0 0 10px rgba(102, 255, 214, 0.7); /* Keep text-shadow */
+}
+
+#footer .footer-top .footer-links ul a {
+  color: rgba(255, 255, 255, 0.9); /* Keep color */
+  transition: all 0.3s ease; /* Keep transition */
+  display: inline-block; /* Keep display */
+  line-height: 1; /* Keep line-height */
+  position: relative; /* Keep position */
+}
+
+#footer .footer-top .footer-links ul a::after {
+  content: ''; /* Keep content */
+  position: absolute; /* Keep position */
+  width: 0; /* Keep width */
+  height: 2px; /* Keep height */
+  bottom: -5px; /* Keep bottom */
+  left: 0; /* Keep left */
+  background-color: #66ffd6; /* Keep background-color */
+  transition: width 0.3s ease; /* Keep transition */
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: #fff; /* Keep color */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Keep text-shadow */
+}
+
+#footer .footer-top .footer-links ul a:hover::after {
+  width: 100%; /* Keep width */
+}
+
+#footer .footer-newsletter {
+  animation: fadeInUp 0.6s ease-out 0.2s forwards; /* Keep animation */
+  opacity: 0; /* Keep opacity */
+}
+
+#footer .footer-newsletter h4 {
+  font-size: 22px; /* Keep font-size */
+  font-weight: 700; /* Keep font-weight */
+  color: #fff; /* Keep color */
+  position: relative; /* Keep position */
+  /* Adjusted padding-bottom */
+  padding-bottom: 9px; /* Original was 15px (60% of 15px is 9px) */
+  /* Adjusted margin-bottom */
+  margin-bottom: 15px; /* Original was 25px (60% of 25px is 15px) */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Keep text-shadow */
+}
+
+#footer .footer-newsletter h4::after {
+  content: ''; /* Keep content */
+  position: absolute; /* Keep position */
+  display: block; /* Keep display */
+  width: 50px; /* Keep width */
+  height: 3px; /* Keep height */
+  background: linear-gradient(90deg, #5b43c7 0%, #66ffd6 100%); /* Keep background */
+  bottom: 0; /* Keep bottom */
+  left: 0; /* Keep left */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Keep transition */
+}
+
+#footer .footer-newsletter h4:hover::after {
+  width: 100px; /* Keep width */
+  height: 4px; /* Keep height */
+  background: linear-gradient(90deg, #66ffd6 0%, #5b43c7 100%); /* Keep background */
+}
+
+#footer .footer-newsletter form {
+  margin-top: 30px; /* Keep margin-top */
+  background: rgba(255, 255, 255, 0.1); /* Keep background */
+  padding: 8px; /* Keep padding */
+  position: relative; /* Keep position */
+  border-radius: 50px; /* Keep border-radius */
+  text-align: left; /* Keep text-align */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Keep border */
+  overflow: hidden; /* Keep overflow */
+  display: flex; /* Keep display */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Keep box-shadow */
+  transition: all 0.3s ease; /* Keep transition */
+}
+
+#footer .footer-newsletter form:hover {
+  transform: translateY(-3px); /* Keep transform */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Keep box-shadow */
+  border-color: rgba(255, 255, 255, 0.5); /* Keep border-color */
+}
+
+#footer .footer-newsletter form::before {
+  content: ''; /* Keep content */
+  position: absolute; /* Keep position */
+  top: -50%; /* Keep top */
+  left: -50%; /* Keep left */
+  width: 200%; /* Keep width */
+  height: 200%; /* Keep height */
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* Keep background */
+  transform: rotate(30deg); /* Keep transform */
+  transition: all 0.7s ease; /* Keep transition */
+}
+
+#footer .footer-newsletter form:hover::before {
+  left: 100%; /* Keep left */
+}
+
+#footer .footer-newsletter form input[type="email"] {
+  border: 0; /* Keep border */
+  padding: 12px 20px; /* Keep padding */
+  width: calc(100% - 120px); /* Keep width */
+  background: rgba(255, 255, 255, 0.05); /* Keep background */
+  color: #fff; /* Keep color */
+  flex-grow: 1; /* Keep flex-grow */
+  font-size: 16px; /* Keep font-size */
+  border-radius: 50px 0 0 50px; /* Keep border-radius */
+  transition: all 0.3s ease; /* Keep transition */
+}
+
+#footer .footer-newsletter form input[type="email"]:focus {
+  background: rgba(255, 255, 255, 0.15); /* Keep background */
+  outline: none; /* Keep outline */
+}
+
+#footer .footer-newsletter form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Keep color */
+}
+
+#footer .footer-newsletter form input[type="submit"] {
+  border: 0; /* Keep border */
+  background: linear-gradient(90deg, #5b43c7 0%, #7a5ed6 100%); /* Keep background */
+  color: #fff; /* Keep color */
+  border-radius: 50px; /* Keep border-radius */
+  box-shadow: 0 4px 15px rgba(91, 67, 199, 0.4); /* Keep box-shadow */
+  transition: all 0.3s ease; /* Keep transition */
+  padding: 12px 30px; /* Keep padding */
+  margin-left: -50px; /* Keep margin-left */
+  font-size: 16px; /* Keep font-size */
+  font-weight: 600; /* Keep font-weight */
+  position: relative; /* Keep position */
+  overflow: hidden; /* Keep overflow */
+  z-index: 1; /* Keep z-index */
+}
+
+#footer .footer-newsletter form input[type="submit"]::before {
+  content: ''; /* Keep content */
+  position: absolute; /* Keep position */
+  top: 0; /* Keep top */
+  left: 0; /* Keep left */
+  width: 100%; /* Keep width */
+  height: 100%; /* Keep height */
+  background: linear-gradient(90deg, #7a5ed6 0%, #66ffd6 100%); /* Keep background */
+  opacity: 0; /* Keep opacity */
+  transition: opacity 0.3s ease; /* Keep transition */
+  z-index: -1; /* Keep z-index */
+}
+
+#footer .footer-newsletter form input[type="submit"]:hover {
+  transform: translateY(-2px); /* Keep transform */
+  box-shadow: 0 6px 20px rgba(91, 67, 199, 0.6); /* Keep box-shadow */
+}
+
+#footer .footer-newsletter form input[type="submit"]:hover::before {
+  opacity: 1; /* Keep opacity */
+}
+
+#footer .credits {
+  /* Adjusted padding */
+  padding: 18px 0; /* Original was 30px 0 (60% of 30px is 18px) */
+  font-size: 15px; /* Keep font-size */
+  color: rgba(255, 255, 255, 0.7); /* Keep color */
+  text-align: center; /* Keep text-align */
+  position: relative; /* Keep position */
+  z-index: 1; /* Keep z-index */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Keep border-top */
+  /* Adjusted margin-top */
+  margin-top: 24px; /* Original was 40px (60% of 40px is 24px) */
+  animation: fadeIn 0.8s ease-out 0.3s forwards; /* Keep animation */
+  opacity: 0; /* Keep opacity */
+}
+
+#footer .credits a {
+  color: #66ffd6; /* Keep color */
+  text-decoration: none; /* Keep text-decoration */
+  transition: all 0.3s ease; /* Keep transition */
+  position: relative; /* Keep position */
+}
+
+#footer .credits a::after {
+  content: ''; /* Keep content */
+  position: absolute; /* Keep position */
+  width: 0; /* Keep width */
+  height: 1px; /* Keep height */
+  bottom: -2px; /* Keep bottom */
+  left: 0; /* Keep left */
+  background-color: #66ffd6; /* Keep background-color */
+  transition: width 0.3s ease; /* Keep transition */
+}
+
+#footer .credits a:hover {
+  color: #fff; /* Keep color */
+  text-shadow: 0 0 10px rgba(102, 255, 214, 0.5); /* Keep text-shadow */
+}
+
+#footer .credits a:hover::after {
+  width: 100%; /* Keep width */
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Fade-in animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #footer .footer-top {
+    /* Adjusted padding for smaller screens */
+    padding: 24px 0 12px 0; /* Original was 40px 0 20px 0 (60% of 40px is 24px, 60% of 20px is 12px) */
+  }
+
+  #footer .footer-top .footer-contact,
+  #footer .footer-top .footer-links {
+    /* Adjusted margin-bottom for smaller screens */
+    margin-bottom: 18px; /* Original was 30px (60% of 30px is 18px) */
+  }
+
+  #footer .footer-newsletter form {
+    flex-direction: column; /* Keep flex-direction */
+    border-radius: 10px; /* Keep border-radius */
+  }
+
+  #footer .footer-newsletter form input[type="email"] {
+    width: 100%; /* Keep width */
+    border-radius: 10px; /* Keep border-radius */
+    margin-bottom: 10px; /* Keep margin-bottom */
+  }
+
+  #footer .footer-newsletter form input[type="submit"] {
+    width: 100%; /* Keep width */
+    margin-left: 0; /* Keep margin-left */
+    border-radius: 10px; /* Keep border-radius */
+  }
+}
