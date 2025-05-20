@@ -12,7 +12,7 @@ include("dbconnection.php");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Terimbere Muhinzi</title>
+  <title>Terimbere Muhinzi-mworozi, Nawe mucuruzi</title>
   <meta content="" name="Agriculture Management System is to help farmers by providing all kinds agriculture related information in the website.">
   <meta content="Online Agriculture Management System, OAMS" name="keywords">
   <link rel="icon" href="imgarticle/botany.png" type="image/png">
