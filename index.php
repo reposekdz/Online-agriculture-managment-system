@@ -3,9 +3,73 @@ include("header.php");
 ?>
 
   <!-- ======= Hero Section ======= -->
+   <style>
+    .hh1 {
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            position: relative;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            
+            /* Animation */
+            animation: bounce 2s infinite alternate;
+        }
+        
+        h1:hover {
+            animation: bigBounce 0.8s ease;
+            transform: scale(1.05);
+        }
+        
+        @keyframes bounce {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                transform: translateY(-20px) scale(1.02);
+            }
+        }
+        
+        @keyframes bigBounce {
+            0%, 100% {
+                transform: translateY(0) scale(1.05);
+            }
+            50% {
+                transform: translateY(-30px) scale(1.1);
+            }
+        }
+        
+        /* Modern decorative elements */
+        h1::before, h1::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(229, 46, 113, 0.2);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(20px);
+        }
+        
+        h1::before {
+            top: -10px;
+            left: -10px;
+        }
+        
+        h1::after {
+            bottom: -10px;
+            right: -10px;
+            background: rgba(255, 138, 0, 0.2);
+        }
+   </style>
   <section id="hero" class="d-flex align-items-center">
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-      <h1>Terimbere Muhinzi-mworozi, Nawe mucuruzi</h1>
+      <h1 class="hh1">Terimbere Muhinzi-mworozi, Nawe mucuruzi</h1>
       <h2>Gahunda yo gucunga ubuhinzi igamije gufasha abahinzi, batanga amakuru yose ajyanye n'ubuhinzi,kugurisha imyakayabo n'ibindi ku rubuga...</h2>
       <a href="customerreglogin.php" class="btn-get-started scrollto">Get Started</a>
     </div>

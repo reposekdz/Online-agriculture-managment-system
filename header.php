@@ -9,6 +9,11 @@ include("dbconnection.php");
 <html lang="en">
 
 <head>
+  <style>
+    .text-light{
+      color: color: #fff;;
+    }
+  </style>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -39,7 +44,7 @@ include("dbconnection.php");
     <div class="container">
       <div class="header-container d-flex align-items-center">
         <div class="logo mr-auto" style="background-color: blueviolet;">
-          <h1 class="text-light" style="margin-left: -20px"><a href="index.php"><span>TM</span></a></h1>
+          <h1 class="text-light" style="margin-left: -25px; font-size: 30px; color: #fff;" ><a href="index.php"><span>TM</span></a></h>
           </div>
 
         <nav class="nav-menu d-none d-lg-block">
