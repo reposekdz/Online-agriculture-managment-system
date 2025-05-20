@@ -1,16 +1,12 @@
 
 # TMMZ an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
-=======
 
 # Online-agriculture-managment-system
 that i a system that help people to sell,manage and get work online on this system
-=======
-# OAMS an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
-=======
+# TMMZ an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
 # TMMZ an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
  f543079 (jjj)
 recovered-work
-=======
 # TMMZ an “Online Agriculture-Managment-System” is a website for online agricultural management system. 
  de95aac (Initial commit for my version)
 This website helps farmers/sellers by providing them a large market online to sell their products.
@@ -30,3 +26,14 @@ Language(s) to be used are:
  recovered-work
 
  de95aac (Initial commit for my version)
+ ![Alt text](appimages/Capture.PNG)
+ ![Alt text](appimages/Capture2.PNG)
+ ![Alt text](appimages/Capture3.PNG)
+ ![Alt text](appimages/Capture4.PNG)
+ ![Alt text](appimages/Capture5.PNG)
+ ![Alt text](appimages/Capture6.PNG)
+ ![Screenshot](appimages/Capture5.PNG)
+ ![Screenshot](appimages/Capture3.PNG)
+ ![Screenshot](appimages/Capture4.PNG)
+
+
