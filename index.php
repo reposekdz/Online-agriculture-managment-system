@@ -5,7 +5,7 @@ include("header.php");
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-      <h1>Terimbere Muhinzi</h1>
+      <h1>Terimbere Muhinzi-mworozi, Nawe mucuruzi</h1>
       <h2>Gahunda yo gucunga ubuhinzi igamije gufasha abahinzi, batanga amakuru yose ajyanye n'ubuhinzi,kugurisha imyakayabo n'ibindi ku rubuga...</h2>
       <a href="customerreglogin.php" class="btn-get-started scrollto">Get Started</a>
     </div>
