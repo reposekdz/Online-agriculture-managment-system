@@ -80,7 +80,7 @@ if(isset($_POST['submit']))
           <div class="profile-card text-center p-4 shadow rounded">
             <img src="images/chandan.jpg" class="img-fluid rounded-circle mb-3" style="width:180px;height:180px;object-fit:cover;">
             <h3>Reponse NIYONKURU</h3>
-            <p class="text-muted">Umwigishwa, GARDEN TSS</p>
+            <p class="text-muted">Umunyeshuri kuri: GARDEN TSS</p>
             <hr class="mx-auto" style="width:50px;">
             <h5 class="mb-3">Duhuze</h5>
             <div class="social-links d-flex justify-content-center">
